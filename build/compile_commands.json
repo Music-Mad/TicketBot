@@ -1,0 +1,637 @@
+[
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/application.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/application.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/application.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/auditlog.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/auditlog.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/auditlog.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/automod.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/automod.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/automod.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/ban.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/ban.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/ban.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/cache.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/cache.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/cache.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/channel.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/channel.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/channel.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/cluster.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/cluster.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/cluster.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/cluster/appcommand.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/cluster/appcommand.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/cluster/appcommand.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/cluster/automod.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/cluster/automod.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/cluster/automod.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/cluster/channel.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/cluster/channel.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/cluster/channel.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/cluster/confirmation.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/cluster/confirmation.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/cluster/confirmation.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/cluster/dm.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/cluster/dm.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/cluster/dm.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/cluster/emoji.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/cluster/emoji.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/cluster/emoji.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/cluster/gateway.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/cluster/gateway.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/cluster/gateway.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/cluster/guild.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/cluster/guild.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/cluster/guild.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/cluster/guild_member.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/cluster/guild_member.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/cluster/guild_member.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/cluster/invite.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/cluster/invite.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/cluster/invite.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/cluster/json_interface.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/cluster/json_interface.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/cluster/json_interface.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/cluster/message.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/cluster/message.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/cluster/message.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/cluster/role.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/cluster/role.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/cluster/role.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/cluster/scheduled_event.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/cluster/scheduled_event.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/cluster/scheduled_event.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/cluster/stage_instance.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/cluster/stage_instance.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/cluster/stage_instance.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/cluster/sticker.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/cluster/sticker.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/cluster/sticker.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/cluster/template.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/cluster/template.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/cluster/template.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/cluster/thread.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/cluster/thread.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/cluster/thread.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/cluster/timer.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/cluster/timer.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/cluster/timer.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/cluster/user.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/cluster/user.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/cluster/user.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/cluster/voice.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/cluster/voice.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/cluster/voice.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/cluster/webhook.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/cluster/webhook.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/cluster/webhook.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/cluster_coro_calls.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/cluster_coro_calls.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/cluster_coro_calls.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/cluster_sync_calls.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/cluster_sync_calls.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/cluster_sync_calls.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/commandhandler.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/commandhandler.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/commandhandler.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/discordclient.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/discordclient.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/discordclient.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/discordevents.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/discordevents.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/discordevents.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/discordvoiceclient.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/discordvoiceclient.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/discordvoiceclient.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/dispatcher.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/dispatcher.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/dispatcher.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/dns.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/dns.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/dns.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/dtemplate.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/dtemplate.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/dtemplate.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/emoji.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/emoji.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/emoji.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/etf.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/etf.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/etf.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/automod_rule_create.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/automod_rule_create.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/automod_rule_create.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/automod_rule_delete.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/automod_rule_delete.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/automod_rule_delete.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/automod_rule_execute.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/automod_rule_execute.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/automod_rule_execute.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/automod_rule_update.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/automod_rule_update.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/automod_rule_update.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/channel_create.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/channel_create.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/channel_create.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/channel_delete.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/channel_delete.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/channel_delete.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/channel_pins_update.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/channel_pins_update.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/channel_pins_update.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/channel_update.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/channel_update.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/channel_update.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/guild_audit_log_entry_create.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/guild_audit_log_entry_create.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/guild_audit_log_entry_create.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/guild_ban_add.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/guild_ban_add.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/guild_ban_add.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/guild_ban_remove.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/guild_ban_remove.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/guild_ban_remove.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/guild_create.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/guild_create.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/guild_create.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/guild_delete.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/guild_delete.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/guild_delete.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/guild_emojis_update.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/guild_emojis_update.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/guild_emojis_update.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/guild_integrations_update.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/guild_integrations_update.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/guild_integrations_update.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/guild_join_request_delete.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/guild_join_request_delete.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/guild_join_request_delete.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/guild_member_add.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/guild_member_add.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/guild_member_add.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/guild_member_remove.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/guild_member_remove.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/guild_member_remove.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/guild_member_update.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/guild_member_update.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/guild_member_update.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/guild_members_chunk.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/guild_members_chunk.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/guild_members_chunk.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/guild_role_create.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/guild_role_create.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/guild_role_create.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/guild_role_delete.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/guild_role_delete.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/guild_role_delete.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/guild_role_update.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/guild_role_update.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/guild_role_update.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/guild_scheduled_event_create.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/guild_scheduled_event_create.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/guild_scheduled_event_create.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/guild_scheduled_event_delete.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/guild_scheduled_event_delete.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/guild_scheduled_event_delete.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/guild_scheduled_event_update.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/guild_scheduled_event_update.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/guild_scheduled_event_update.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/guild_scheduled_event_user_add.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/guild_scheduled_event_user_add.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/guild_scheduled_event_user_add.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/guild_scheduled_event_user_remove.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/guild_scheduled_event_user_remove.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/guild_scheduled_event_user_remove.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/guild_stickers_update.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/guild_stickers_update.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/guild_stickers_update.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/guild_update.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/guild_update.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/guild_update.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/integration_create.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/integration_create.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/integration_create.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/integration_delete.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/integration_delete.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/integration_delete.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/integration_update.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/integration_update.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/integration_update.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/interaction_create.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/interaction_create.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/interaction_create.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/invite_create.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/invite_create.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/invite_create.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/invite_delete.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/invite_delete.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/invite_delete.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/logger.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/logger.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/logger.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/message_create.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/message_create.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/message_create.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/message_delete.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/message_delete.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/message_delete.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/message_delete_bulk.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/message_delete_bulk.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/message_delete_bulk.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/message_reaction_add.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/message_reaction_add.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/message_reaction_add.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/message_reaction_remove.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/message_reaction_remove.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/message_reaction_remove.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/message_reaction_remove_all.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/message_reaction_remove_all.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/message_reaction_remove_all.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/message_reaction_remove_emoji.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/message_reaction_remove_emoji.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/message_reaction_remove_emoji.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/message_update.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/message_update.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/message_update.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/presence_update.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/presence_update.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/presence_update.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/ready.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/ready.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/ready.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/resumed.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/resumed.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/resumed.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/stage_instance_create.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/stage_instance_create.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/stage_instance_create.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/stage_instance_delete.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/stage_instance_delete.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/stage_instance_delete.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/stage_instance_update.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/stage_instance_update.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/stage_instance_update.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/thread_create.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/thread_create.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/thread_create.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/thread_delete.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/thread_delete.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/thread_delete.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/thread_list_sync.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/thread_list_sync.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/thread_list_sync.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/thread_member_update.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/thread_member_update.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/thread_member_update.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/thread_members_update.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/thread_members_update.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/thread_members_update.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/thread_update.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/thread_update.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/thread_update.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/typing_start.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/typing_start.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/typing_start.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/user_update.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/user_update.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/user_update.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/voice_server_update.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/voice_server_update.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/voice_server_update.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/voice_state_update.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/voice_state_update.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/voice_state_update.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/events/webhooks_update.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/events/webhooks_update.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/events/webhooks_update.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/guild.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/guild.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/guild.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/httpsclient.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/httpsclient.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/httpsclient.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/integration.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/integration.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/integration.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/invite.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/invite.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/invite.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/message.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/message.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/message.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/permissions.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/permissions.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/permissions.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/presence.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/presence.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/presence.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/prune.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/prune.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/prune.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/queues.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/queues.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/queues.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/role.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/role.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/role.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/scheduled_event.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/scheduled_event.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/scheduled_event.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/slashcommand.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/slashcommand.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/slashcommand.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/snowflake.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/snowflake.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/snowflake.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/sslclient.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/sslclient.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/sslclient.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/stage_instance.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/stage_instance.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/stage_instance.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/user.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/user.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/user.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/utility.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/utility.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/utility.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/voiceregion.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/voiceregion.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/voiceregion.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/voicestate.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/voicestate.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/voicestate.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/webhook.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/webhook.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/webhook.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -DHAVE_PRCTL -DHAVE_PTHREAD_SETNAME_NP -Ddpp_EXPORTS -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -fPIC -mavx2 -o CMakeFiles/dpp.dir/__/src/dpp/wsclient.cpp.o -c /root/TicketBot/dep/DPP/src/dpp/wsclient.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/dpp/wsclient.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -mavx2 -o CMakeFiles/soaktest.dir/__/src/soaktest/soak.cpp.o -c /root/TicketBot/dep/DPP/src/soaktest/soak.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/soaktest/soak.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -mavx2 -o CMakeFiles/unittest.dir/__/src/unittest/coro.cpp.o -c /root/TicketBot/dep/DPP/src/unittest/coro.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/unittest/coro.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -mavx2 -o CMakeFiles/unittest.dir/__/src/unittest/test.cpp.o -c /root/TicketBot/dep/DPP/src/unittest/test.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/unittest/test.cpp"
+},
+{
+  "directory": "/root/TicketBot/build/library",
+  "command": "/usr/bin/c++ -DAVX_TYPE=2 -DDPP_BUILD -DDPP_OS=Linux -I/root/TicketBot/dep/DPP/library/../include -I/root/TicketBot/dep/DPP/library/../include/dpp  -Wall -Wno-unused-private-field -Wno-psabi -Wempty-body -Wignored-qualifiers -Wimplicit-fallthrough -Wmissing-field-initializers -Wsign-compare -Wtype-limits -Wuninitialized -Wshift-negative-value -pthread -mavx2 -o CMakeFiles/unittest.dir/__/src/unittest/unittest.cpp.o -c /root/TicketBot/dep/DPP/src/unittest/unittest.cpp",
+  "file": "/root/TicketBot/dep/DPP/src/unittest/unittest.cpp"
+}
+]
