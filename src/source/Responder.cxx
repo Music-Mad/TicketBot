@@ -56,9 +56,9 @@ const void Responder::generateTicketResponse(const dpp::message& msgToRespond, c
     Ticket& request = tktManager.tickets[client.id].front();
     if (!request.isBudgetInitialized()) { 
         if (request.isBudgetTokens()) { //token response
-            bot.direct_message_create(client.id, dpp::message("Ok! Next, type out the amount of tokens you would like to pay. Please note that you must type out the full amount. Ex: Instead of 100K, you must write 100,000."));
+            bot.direct_message_create(client.id, dpp::message("Ok! Please type out the amount of tokens you would like to pay. Please note that you must type out the full amount. Ex: Instead of 100K, you must write 100,000."));
         } else { //usd response
-            bot.direct_message_create(client.id, dpp::message("Ok! Next, submit a budget for your request:"));
+            bot.direct_message_create(client.id, dpp::message("Ok! Submit a budget for your request in USD:"));
         }
     } else if (!request.isDescInitialized()) { // if desc is unitialized
         bot.direct_message_create(client.id, dpp::message("Got it! Now, type out a description of what you would like done. You should include as much detail in your request as possible to help creators understand your request."));
