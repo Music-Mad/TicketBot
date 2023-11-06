@@ -12,7 +12,9 @@ Ticket::Ticket(const std::string& budget_in, const std::string& description_in, 
 };
 
 bool Ticket::storeResponse(const dpp::message& response, dpp::cluster& bot) {
-    if (budget == "") {
+    if (!currencyBtnsDisabled) {
+        bot.direct_message_create(client.id, dpp::message("Select one of the buttons above!"));
+    } else if (budget == "") {
         if (budgetIsTokens) {
             std::string formattedVal = CurrencyFormatter::tokenStringIsValid(response.content);
             if (formattedVal == "invalid_character") {
