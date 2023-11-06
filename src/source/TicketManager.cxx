@@ -59,7 +59,6 @@ const bool TicketManager::listTickets(const dpp::user& client, dpp::cluster& bot
         }
         return true;
     } else {
-        bot.direct_message_create(client.id, dpp::message("You have no active tickets"));
         return false;
     }
 };
@@ -71,14 +70,12 @@ void TicketManager::addTicket(const dpp::user& client) {
 };
 
 
-bool TicketManager::cancelTicket(const dpp::user& client, dpp::cluster& bot) {
+bool TicketManager::cancelTicket(const dpp::user& client) {
     if (!userHasTktGenerating(client)) {
-        bot.direct_message_create(client.id, dpp::message("You aren't currently creating a ticket. Use /status if you want to delete a ticket you've already submitted."));
         return false;
     }
 
     tickets.at(client.id).erase(tickets.at(client.id).begin());
-    bot.direct_message_create(client.id, dpp::message("Your ticket has been successfully deleted. Please use /request if you would ever like to create a new ticket."));
     return true;
 };
 
@@ -186,7 +183,7 @@ std::string TicketManager::handleBtnPress(dpp::cluster& bot, const dpp::button_c
             bot.direct_message_create(event.command.usr.id, confirmationMsg);
             createTicketThread(event.command.usr, bot);
         } else if (event.custom_id == "btn_cancel") {
-            cancelTicket(event.command.usr, bot);
+            cancelTicket(event.command.usr);
         } else if (event.custom_id == "btn_change_info") {
 
         } else
