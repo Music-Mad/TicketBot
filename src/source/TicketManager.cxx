@@ -184,6 +184,7 @@ std::string TicketManager::handleBtnPress(dpp::cluster& bot, const dpp::button_c
             createTicketThread(event.command.usr, bot);
         } else if (event.custom_id == "btn_cancel") {
             cancelTicket(event.command.usr);
+            return "ticket_confirmation_cancelled";
         } else if (event.custom_id == "btn_change_info") {
 
         } else

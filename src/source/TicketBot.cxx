@@ -59,8 +59,11 @@ int main() {
 
     //handle button press
     bot.on_button_click([&bot, responder] (const dpp::button_click_t & event) mutable {
-        if (tktManager.handleBtnPress(bot, event) == "stage_ticket_response"){
+        std::string response = tktManager.handleBtnPress(bot, event);
+        if (response == "stage_ticket_response"){
             responder.generateTicketResponse(event.command.msg, event.command.usr, tktManager);
+        } else if (response == "ticket_confirmation_cancelled") {
+            bot.direct_message_create(event.command.usr.id, dpp::message("Your ticket has been successfully deleted. Please use /request if you would like to create a new ticket"));
         }
         event.reply();
     });
