@@ -38,7 +38,7 @@ const bool TicketManager::listTickets(const dpp::user& client, dpp::cluster& bot
                 //cache ticket
                 Ticket t = tickets.at(client.id)[i];
                 if (t.isGenerating()) {
-                    break; //skip if generating
+                    continue; //skip if generating
                 }
                 //generate msg
                 dpp::message msg("### " + std::to_string(i + 1) + ". " + t.getName() + "\n--------------------" + "\n" + t.compileBody() + "\n" + t.compileAttachments());
@@ -56,7 +56,9 @@ const bool TicketManager::listTickets(const dpp::user& client, dpp::cluster& bot
                 bot.direct_message_create(client.id, msg);
                 return true;
             }
-        } catch (const std::exception& e) {}
+        } catch (const std::exception& e) {
+            std::cout << "Error: listTickets exception" << std::endl;
+        }
     } 
     return false;
 };
