@@ -1,6 +1,5 @@
 #!/bin/sh
-
-killall bot
-cd src
-g++ -std=c++17 mybot.cxx -o ticketbot -ldpp
+cd src/source
+g++ -std=c++17 *.cxx -o ../ticketbot -ldpp
+cd .. 
 ./ticketbot
