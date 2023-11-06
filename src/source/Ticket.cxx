@@ -76,7 +76,6 @@ bool Ticket::handleBtnPress(dpp::cluster& bot, const dpp::button_click_t& event)
     } else if (!attachmentsSubmitted) {
         if (event.custom_id == "btn_skip_image") {
             attachmentsSubmitted = true;
-            std::cout << "test2" << std::endl;
             return true;          
         }
     }

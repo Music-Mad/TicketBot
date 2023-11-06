@@ -9,9 +9,8 @@ Responder::Responder(dpp::cluster& bot)
 
 const bool Responder::sendInitResponse(const dpp::user& client) {
      try {
-        dpp::message msg1("Welcome to the Ink Overflow community marketplace! If you ever encounter any problems with our service please use this form to report them: https://forms.gle/NL8JgbAS13BXEBJD6. If you would like to cancel your request at any point, type '**/cancel.**'"); 
-        dpp::message msg2("Before publishing your commission, we would like to learn a little bit more about your request. Firstly, will you be paying in Rec Room tokens or USD (US Dollar)?");
-        msg2.add_component(
+        dpp::message msg("Welcome to the Ink Overflow community marketplace! If you ever encounter any problems with our service please use this form to report them: https://forms.gle/NL8JgbAS13BXEBJD6. If you would like to cancel your request at any point, type '**/cancel.**' \n Before publishing your commission, we would like to learn a little bit more about your request. Firstly, will you be paying in Rec Room tokens or USD (US Dollar)?"); 
+        msg.add_component(
             dpp::component().add_component(
 	        dpp::component().set_label("USD").
 	        set_type(dpp::cot_button).
@@ -20,7 +19,7 @@ const bool Responder::sendInitResponse(const dpp::user& client) {
 	        set_id("btn_usd")
             )
         );
-        msg2.add_component(
+        msg.add_component(
             dpp::component().add_component(
 	        dpp::component().set_label("Tokens").
 	        set_type(dpp::cot_button).
@@ -30,8 +29,7 @@ const bool Responder::sendInitResponse(const dpp::user& client) {
             )
         );
         //response
-        bot.direct_message_create(client.id, msg1);
-        bot.direct_message_create(client.id, msg2);
+        bot.direct_message_create(client.id, msg);
         return true;
     } catch(const std::exception& e)
     {
@@ -76,10 +74,9 @@ const void Responder::generateTicketResponse(const dpp::message& msgToRespond, c
         bot.direct_message_create(client.id, dpp::message("Lastly, name your commission request. This name should reflect the content of your request to help it stand out! Ex: 'Roman Empire Enviroment'"));
     } else if (request.isGenerating()) {
         //generate response
-        dpp::message msg1(tktManager.compileBody(client.id, 0));
-        dpp::message msg2(tktManager.compileAttatchments(client.id, 0));
+        dpp::message msg( "Ok! Please confirm all of the following information is correct: \n" + tktManager.compileBody(client.id, 0) + "\n" + tktManager.compileAttatchments(client.id, 0));
         //add buttons
-        msg2.add_component(
+        msg.add_component(
             dpp::component().add_component(
 	        dpp::component().set_label("Confirm and submit").
 	        set_type(dpp::cot_button).
@@ -88,7 +85,7 @@ const void Responder::generateTicketResponse(const dpp::message& msgToRespond, c
 	        set_id("btn_submit")
             )
         );
-        msg2.add_component(
+        msg.add_component(
             dpp::component().add_component(
 	        dpp::component().set_label("Change information").
 	        set_type(dpp::cot_button).
@@ -97,7 +94,7 @@ const void Responder::generateTicketResponse(const dpp::message& msgToRespond, c
 	        set_id("btn_change_info")
             )
         );
-        msg2.add_component(
+        msg.add_component(
             dpp::component().add_component(
 	        dpp::component().set_label("Cancel ticket").
 	        set_type(dpp::cot_button).
@@ -106,9 +103,8 @@ const void Responder::generateTicketResponse(const dpp::message& msgToRespond, c
 	        set_id("btn_cancel")
             ) 
         );
-        bot.direct_message_create(client.id, dpp::message("Ok! Please confirm all of the following information is correct: "));
-        bot.direct_message_create(client.id, msg1);
-        bot.direct_message_create(client.id, msg2);
+        bot.direct_message_create(client.id, msg);
+
     } else {
 
     }

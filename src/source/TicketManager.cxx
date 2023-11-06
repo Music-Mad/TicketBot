@@ -41,11 +41,9 @@ const bool TicketManager::listTickets(const dpp::user& client, dpp::cluster& bot
                     break; //skip if generating
                 }
                 //generate msg
-                dpp::message title("### " + std::to_string(i + 1) + ". " + t.getName() + R"(--------------------)");
-                dpp::message body(t.compileBody());
-                dpp::message attatchments(t.compileAttachments() + " ");
+                dpp::message msg("### " + std::to_string(i + 1) + ". " + t.getName() + "\n--------------------" + "\n" + t.compileBody() + "\n" + t.compileAttachments());
                 //add btn
-                attatchments.add_component(
+                msg.add_component(
                     dpp::component().add_component(
 	                dpp::component().set_label("Edit ticket #" + std::to_string(i + 1)).
 	                set_type(dpp::cot_button).
@@ -55,11 +53,7 @@ const bool TicketManager::listTickets(const dpp::user& client, dpp::cluster& bot
                     ) 
                 );
                 //send
-                bot.direct_message_create(client.id, title);
-                bot.direct_message_create(client.id, body);
-                if (attatchments.content != "") {
-                    bot.direct_message_create(client.id, attatchments);
-                }  
+                bot.direct_message_create(client.id, msg);
                 return true;
             }
         } catch (const std::exception& e) {}
