@@ -83,7 +83,7 @@ int main() {
                 event.reply(dpp::message("You aren't currently creating a ticket. Use /status if you want to delete a ticket you've already submitted.").set_flags(dpp::m_ephemeral));
             }
         } else if (event.command.get_command_name() == "status") {
-            if (tktManager.reviewTicket(event.command.usr, 0, bot)) {
+            if (tktManager.listTickets(event.command.usr, bot)) {
                 event.reply(dpp::message("Check your DM's").set_flags(dpp::m_ephemeral));
             } else {
                 event.reply(dpp::message("You have no tickets! Create one with /request").set_flags(dpp::m_ephemeral));

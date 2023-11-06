@@ -33,34 +33,38 @@ const bool TicketManager::userHasTktGenerating(const dpp::user& user) {
 
 const bool TicketManager::listTickets(const dpp::user& client, dpp::cluster& bot) {
     if(tickets.find(client.id) != tickets.end()) {
-        for (int i = 0; i < tickets.at(client.id).size(); ++i) {
-            //cache ticket
-            Ticket t = tickets.at(client.id)[i];
-            //generate msg
-            dpp::message title("### " + std::to_string(i + 1) + ". " + t.getName() + R"(--------------------)");
-            dpp::message body(t.compileBody());
-            dpp::message attatchments(t.compileAttachments() + " ");
-            //add btn
-            attatchments.add_component(
-                dpp::component().add_component(
-	            dpp::component().set_label("Edit ticket #" + std::to_string(i + 1)).
-	            set_type(dpp::cot_button).
-                set_emoji(u8"✍️").
-	            set_style(dpp::cos_primary).
-	            set_id("btn_status_edit_" + std::to_string(i))
-                ) 
-            );
-            //send
-            bot.direct_message_create(client.id, title);
-            bot.direct_message_create(client.id, body);
-            if (attatchments.content != "") {
-                bot.direct_message_create(client.id, attatchments);
+        try {
+            for (int i = 0; i < tickets.at(client.id).size(); ++i) {
+                //cache ticket
+                Ticket t = tickets.at(client.id)[i];
+                if (t.isGenerating()) {
+                    break; //skip if generating
+                }
+                //generate msg
+                dpp::message title("### " + std::to_string(i + 1) + ". " + t.getName() + R"(--------------------)");
+                dpp::message body(t.compileBody());
+                dpp::message attatchments(t.compileAttachments() + " ");
+                //add btn
+                attatchments.add_component(
+                    dpp::component().add_component(
+	                dpp::component().set_label("Edit ticket #" + std::to_string(i + 1)).
+	                set_type(dpp::cot_button).
+                    set_emoji(u8"✍️").
+	                set_style(dpp::cos_primary).
+	                set_id("btn_status_edit_" + std::to_string(i))
+                    ) 
+                );
+                //send
+                bot.direct_message_create(client.id, title);
+                bot.direct_message_create(client.id, body);
+                if (attatchments.content != "") {
+                    bot.direct_message_create(client.id, attatchments);
+                }  
+                return true;
             }
-        }
-        return true;
-    } else {
-        return false;
-    }
+        } catch (const std::exception& e) {}
+    } 
+    return false;
 };
 
 void TicketManager::addTicket(const dpp::user& client) {
