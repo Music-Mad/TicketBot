@@ -30,7 +30,8 @@ public:
 
     //setters
     void setIsGenerating(bool val);
-
+    void setIsEditing(bool val);
+    
     //for getting ticket gen state
     const bool isGenerating();
     const bool isCurrencyBtnsDisabled();

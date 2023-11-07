@@ -126,6 +126,11 @@ const bool Ticket::isBudgetTokens() {
 void Ticket::setIsGenerating(bool val) {
     generating = val;
 }
+
+void Ticket::setIsEditing(bool val) {
+    editing = val;
+}
+
 const bool Ticket::isGenerating() {
     return generating;
 };
