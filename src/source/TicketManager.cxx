@@ -121,12 +121,10 @@ const bool TicketManager::reviewTicket(const dpp::user& client, int ticketIndex,
     }
     //cache ticket
     Ticket& request = tickets.at(client.id)[ticketIndex];
+    request.setIsEditing(true);
     //generate responses
-    dpp::message msg0("## " + request.getName() + " ##");
-    dpp::message msg1(request.compileBody());
-    dpp::message msg2(request.compileAttachments());
-
-    msg2.add_component(
+    dpp::message msg("## " + request.getName() + " ##\n" + request.compileBody() + request.compileAttachments());
+    msg.add_component(
         dpp::component().add_component(
 	    dpp::component().set_label("Edit budget").
 	    set_type(dpp::cot_button).
@@ -134,7 +132,7 @@ const bool TicketManager::reviewTicket(const dpp::user& client, int ticketIndex,
 	    set_id("btn_edit_budget")
         ) 
     );
-    msg2.add_component(
+    msg.add_component(
         dpp::component().add_component(
 	    dpp::component().set_label("Edit description").
 	    set_type(dpp::cot_button).
@@ -142,7 +140,7 @@ const bool TicketManager::reviewTicket(const dpp::user& client, int ticketIndex,
 	    set_id("btn_edit_description")
         ) 
     );
-    msg2.add_component(
+    msg.add_component(
         dpp::component().add_component(
 	    dpp::component().set_label("Edit title").
 	    set_type(dpp::cot_button).
@@ -150,7 +148,7 @@ const bool TicketManager::reviewTicket(const dpp::user& client, int ticketIndex,
 	    set_id("btn_edit_title")
         ) 
     );
-    msg2.add_component(
+    msg.add_component(
         dpp::component().add_component(
 	    dpp::component().set_label("Delete ticket").
 	    set_type(dpp::cot_button).
@@ -159,7 +157,7 @@ const bool TicketManager::reviewTicket(const dpp::user& client, int ticketIndex,
 	    set_id("btn_delete_ticket")
         ) 
     );
-    msg2.add_component(
+    msg.add_component(
         dpp::component().add_component(
 	    dpp::component().set_label("Back").
 	    set_type(dpp::cot_button).
@@ -168,9 +166,7 @@ const bool TicketManager::reviewTicket(const dpp::user& client, int ticketIndex,
 	    set_id("btn_back")
         ) 
     );
-    bot.direct_message_create(client.id, msg0);
-    bot.direct_message_create(client.id, msg1);
-    bot.direct_message_create(client.id, msg2);
+    bot.direct_message_create(client.id, msg);
     return true;
 };
 
@@ -193,6 +189,12 @@ std::string TicketManager::handleBtnPress(dpp::cluster& bot, const dpp::button_c
                 return "stage_ticket_response";
             }
         }
+    }
+
+    if (event.custom_id.substr(0, 16) == "btn_status_edit_") {
+        int ticketIndex = std::stoi(event.custom_id.substr(16, 1));
+        reviewTicket(event.command.usr, std::stoi(event.custom_id.substr(16, 1)), bot);
+        return "status_edit_ticket";
     }
     return "";
 };

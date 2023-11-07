@@ -25,6 +25,6 @@ class TicketManager {
         bool createTicketThread(const dpp::user& client, dpp::cluster& bot);
         bool saveResponse(const dpp::message& response, int ticketIndex, dpp::cluster& bot); //save response in ticket depending on gen stage
         std::string handleBtnPress(dpp::cluster& bot, const dpp::button_click_t& event); //return true if tktResponse needs to be called
-        const bool reviewTicket(const dpp::user&client, int ticketIndex, dpp::cluster& bot);
+        const bool reviewTicket(const dpp::user&client, int ticketIndex, dpp::cluster& bot); //opens review/edit menu
 
 };
