@@ -9,6 +9,7 @@ Ticket::Ticket(const std::string& budget_in, const std::string& description_in, 
     budgetIsTokens = false;
     currencyBtnsDisabled = false;
     attachmentsSubmitted = false;
+    editing = false;
 };
 
 bool Ticket::storeResponse(const dpp::message& response, dpp::cluster& bot) {
@@ -147,4 +148,8 @@ const bool Ticket::isDescInitialized() {
 
 const bool Ticket::isNameInitialized() {
     return name != "";
+}
+
+const bool Ticket::isEditing() {
+    return editing;
 }
