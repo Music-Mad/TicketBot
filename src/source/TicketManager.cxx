@@ -148,41 +148,37 @@ const bool TicketManager::reviewTicket(const dpp::user& client, int ticketIndex,
 	    dpp::component().set_label("Edit budget").
 	    set_type(dpp::cot_button).
 	    set_style(dpp::cos_primary).
-	    set_id("btn_edit_budget")
-        ) 
-    );
-    msg.add_component(
-        dpp::component().add_component(
+	    set_id("btn_edit_budget_" + std::to_string(ticketIndex))
+        )
+        //desc
+        .add_component(
 	    dpp::component().set_label("Edit description").
 	    set_type(dpp::cot_button).
 	    set_style(dpp::cos_primary).
-	    set_id("btn_edit_description")
-        ) 
-    );
-    msg.add_component(
-        dpp::component().add_component(
+	    set_id("btn_edit_description_" + std::to_string(ticketIndex))
+        )
+        //title
+        .add_component(
 	    dpp::component().set_label("Edit title").
 	    set_type(dpp::cot_button).
 	    set_style(dpp::cos_primary).
-	    set_id("btn_edit_title")
-        ) 
-    );
-    msg.add_component(
-        dpp::component().add_component(
+	    set_id("btn_edit_title_" + std::to_string(ticketIndex))
+        )
+        //delete
+        .add_component(
 	    dpp::component().set_label("Delete ticket").
 	    set_type(dpp::cot_button).
         set_emoji(u8"❌").
 	    set_style(dpp::cos_primary).
-	    set_id("btn_delete_ticket")
-        ) 
-    );
-    msg.add_component(
-        dpp::component().add_component(
+	    set_id("btn_edit_delete_" + std::to_string(ticketIndex))
+        )
+        //back
+        .add_component(
 	    dpp::component().set_label("Back").
 	    set_type(dpp::cot_button).
         set_emoji(u8"🔙").
 	    set_style(dpp::cos_primary).
-	    set_id("btn_back")
+	    set_id("btn_edit_back_" + std::to_string(ticketIndex))
         ) 
     );
     bot.direct_message_create(client.id, msg);
@@ -190,12 +186,17 @@ const bool TicketManager::reviewTicket(const dpp::user& client, int ticketIndex,
 };
 
 std::string TicketManager::handleBtnPress(dpp::cluster& bot, const dpp::button_click_t& event) {
-    if (userHasTktGenerating(event.command.usr))
+    //cache common data
+    const bool tktGenerating = userHasTktGenerating(event.command.usr);
+    const bool tktEditing = userHasTktEditing(event.command.usr);
+    const dpp::snowflake& usrId = event.command.usr.id;
+
+    if (tktGenerating)
     {
         if (event.custom_id == "btn_submit") {
-            tickets.at(event.command.usr.id)[0].setIsGenerating(false);
+            tickets.at(usrId)[0].setIsGenerating(false);
             dpp::message confirmationMsg("Thank you for your request! Your response has been saved and sent to our verified creators for review. You will recieve a DM from a creator if they would like to fulfill your commission. After one week of inactivity, your request will automatically be closed. Please reach out to an Ink Overflow admin if you have any questions");
-            bot.direct_message_create(event.command.usr.id, confirmationMsg);
+            bot.direct_message_create(usrId, confirmationMsg);
             createTicketThread(event.command.usr, bot);
         } else if (event.custom_id == "btn_cancel") {
             cancelTicket(event.command.usr);
@@ -204,7 +205,7 @@ std::string TicketManager::handleBtnPress(dpp::cluster& bot, const dpp::button_c
 
         } else
         {
-            if (tickets.at(event.command.usr.id)[0].handleBtnPress(bot, event)) {
+            if (tickets.at(usrId)[0].handleBtnPress(bot, event)) {
                 return "stage_ticket_response";
             }
         }
@@ -212,13 +213,29 @@ std::string TicketManager::handleBtnPress(dpp::cluster& bot, const dpp::button_c
 
     
     if (event.custom_id.substr(0, 16) == "btn_status_edit_") {
-        if (userHasTktEditing(event.command.usr) || userHasTktGenerating(event.command.usr)) {
-            bot.direct_message_create(event.command.usr.id, dpp::message("You must finish creating your ticket before using this button. If you want to cancel your current ticket, use /cancel"));
+        if (tktGenerating || tktEditing) {
+            bot.direct_message_create(usrId, dpp::message("You must finish creating your ticket before using this button. If you want to cancel your current ticket, use /cancel"));
         } else {
-            int ticketIndex = std::stoi(event.custom_id.substr(16, 1));
             reviewTicket(event.command.usr, std::stoi(event.custom_id.substr(16, 1)), bot);
             return "status_edit_ticket";
         }
+    }
+
+    if (event.custom_id.substr(0,9) == "btn_edit_") {
+        if (tktEditing) {
+            if (event.custom_id.substr(0, 13) == "btn_edit_back") {
+                int ticketIndex = std::stoi(event.custom_id.substr(13, 1));
+                Ticket& t = tickets.at(usrId)[ticketIndex];
+                t.setIsEditing(false);
+                return "edit_back";
+            }
+        } else {
+            if (tktGenerating) {
+                return "edit_failed_generating";
+            }
+            return "edit_failed_unknown";
+        }
+
     }
 
 
