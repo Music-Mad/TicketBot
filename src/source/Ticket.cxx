@@ -50,7 +50,7 @@ bool Ticket::storeResponse(const dpp::message& response, dpp::cluster& bot) {
         return true;
     } else if (!attachmentsSubmitted) {
         if (response.attachments.size() > 0) {
-            for (dpp::attachment att : attachments) {
+            for (dpp::attachment att : response.attachments) {
                 attachments.push_back(att);
             }
             attachmentsSubmitted = true;
@@ -111,7 +111,6 @@ const std::string Ticket::compileAttachments() {
         {
             imgs += " " + att.url;
         }
-    
     return imgs;
 };
 
