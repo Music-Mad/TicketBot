@@ -58,6 +58,7 @@ const bool TicketManager::listTickets(const dpp::user& client, dpp::cluster& bot
                 //cache ticket
                 Ticket t = tickets.at(client.id)[i];
                 if (t.isGenerating()) {
+                    std::cout << "skipped " + t.getName() << std::endl;
                     continue; //skip if generating
                 }
                 //generate msg
@@ -74,8 +75,8 @@ const bool TicketManager::listTickets(const dpp::user& client, dpp::cluster& bot
                 );
                 //send
                 bot.direct_message_create(client.id, msg);
-                return true;
             }
+            return true;
         } catch (const std::exception& e) {
             std::cout << "Error: listTickets exception" << std::endl;
         }
@@ -108,11 +109,9 @@ bool TicketManager::createTicketThread(const dpp::user& client, dpp::cluster& bo
             dpp::thread myThread = std::get<dpp::thread>(callback.value);
             //generate ticket
             Ticket& t = tickets.at(client.id)[0];
-            dpp::message msg1(myThread.id, t.compileBody());
-            dpp::message msg2(myThread.id, t.compileAttachments());
+            dpp::message msg(myThread.id, t.compileBody() + "\n" + t.compileAttachments());
             //send
-            bot.message_create(msg1);
-            bot.message_create(msg2);
+            bot.message_create(msg);
             return true;
         } else {
             dpp::utility::log_error();
