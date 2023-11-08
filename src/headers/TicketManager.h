@@ -17,6 +17,7 @@ class TicketManager {
 
         //tkt operations
         const bool userHasTktGenerating(const dpp::user& user);
+        const bool userHasTktEditing(const dpp::user& user);
         const bool listTickets(const dpp::user& client, dpp::cluster& bot);
         void addTicket(const dpp::user& client);
         bool cancelTicket(const dpp::user& client);

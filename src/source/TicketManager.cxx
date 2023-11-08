@@ -31,8 +31,28 @@ const bool TicketManager::userHasTktGenerating(const dpp::user& user) {
     return false;
 };
 
+const bool TicketManager::userHasTktEditing(const dpp::user& user) {
+    if (tickets.find(user.id) == tickets.end()) {
+        return false;
+    }
+    for (int i = 0; i < tickets.at(user.id).size(); i++) {
+        if (tickets[user.id][i].isEditing()) {
+            return true;
+        }
+    }
+    return false;
+};
+
+
 const bool TicketManager::listTickets(const dpp::user& client, dpp::cluster& bot) {
     if(tickets.find(client.id) != tickets.end()) {
+        if (userHasTktGenerating(client)) {
+            bot.direct_message_create(client.id, dpp::message("Finish creating your ticket or use /cancel before entering the /status menu."));
+            return true;
+        } else if (userHasTktEditing(client)) {
+            bot.direct_message_create(client.id, dpp::message("You cannot use this command right now. Finish editing the current ticket first."));
+            return true;
+        }
         try {
             for (int i = 0; i < tickets.at(client.id).size(); ++i) {
                 //cache ticket
@@ -191,11 +211,18 @@ std::string TicketManager::handleBtnPress(dpp::cluster& bot, const dpp::button_c
         }
     }
 
+    
     if (event.custom_id.substr(0, 16) == "btn_status_edit_") {
-        int ticketIndex = std::stoi(event.custom_id.substr(16, 1));
-        reviewTicket(event.command.usr, std::stoi(event.custom_id.substr(16, 1)), bot);
-        return "status_edit_ticket";
+        if (userHasTktEditing(event.command.usr) || userHasTktGenerating(event.command.usr)) {
+            bot.direct_message_create(event.command.usr.id, dpp::message("You must finish creating your ticket before using this button. If you want to cancel your current ticket, use /cancel"));
+        } else {
+            int ticketIndex = std::stoi(event.custom_id.substr(16, 1));
+            reviewTicket(event.command.usr, std::stoi(event.custom_id.substr(16, 1)), bot);
+            return "status_edit_ticket";
+        }
     }
+
+
     return "";
 };
 
