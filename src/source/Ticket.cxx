@@ -159,5 +159,5 @@ const bool Ticket::isEditing() {
 }
 
 const bool Ticket::operator==(const Ticket rhs) {
-    return name == rhs.name && description == rhs.description && rhs.budget == rhs.budget && attachments == rhs.attachments && client == rhs.client;
+    return name == rhs.name && description == rhs.description && rhs.budget == rhs.budget && client == rhs.client;
 };
