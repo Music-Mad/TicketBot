@@ -90,6 +90,20 @@ void TicketManager::addTicket(const dpp::user& client) {
     tickets[client.id].insert(tickets.at(client.id).begin(), t);
 };
 
+bool TicketManager::deleteTicket(const dpp::snowflake& client, const Ticket& target) {
+    if (tickets.find(client) == tickets.end()) {
+        return false;
+    } else {
+        for (int i = 0; i < tickets.at(client).size(); ++i) {
+            if(tickets.at(client)[i] == target) {
+                tickets.at(client).erase(tickets.at(client).begin() + i);
+                return true;
+            }
+        }
+    }
+    return false;
+};
+
 
 bool TicketManager::cancelTicket(const dpp::user& client) {
     if (!userHasTktGenerating(client)) {
@@ -148,21 +162,21 @@ const bool TicketManager::reviewTicket(const dpp::user& client, int ticketIndex,
 	    dpp::component().set_label("Edit budget").
 	    set_type(dpp::cot_button).
 	    set_style(dpp::cos_primary).
-	    set_id("btn_edit_budget_" + std::to_string(ticketIndex))
+	    set_id("btn_edit_budget")
         )
         //desc
         .add_component(
 	    dpp::component().set_label("Edit description").
 	    set_type(dpp::cot_button).
 	    set_style(dpp::cos_primary).
-	    set_id("btn_edit_description_" + std::to_string(ticketIndex))
+	    set_id("btn_edit_description")
         )
         //title
         .add_component(
 	    dpp::component().set_label("Edit title").
 	    set_type(dpp::cot_button).
 	    set_style(dpp::cos_primary).
-	    set_id("btn_edit_title_" + std::to_string(ticketIndex))
+	    set_id("btn_edit_title")
         )
         //delete
         .add_component(
@@ -170,7 +184,7 @@ const bool TicketManager::reviewTicket(const dpp::user& client, int ticketIndex,
 	    set_type(dpp::cot_button).
         set_emoji(u8"❌").
 	    set_style(dpp::cos_primary).
-	    set_id("btn_edit_delete_" + std::to_string(ticketIndex))
+	    set_id("btn_edit_delete")
         )
         //back
         .add_component(
@@ -178,7 +192,7 @@ const bool TicketManager::reviewTicket(const dpp::user& client, int ticketIndex,
 	    set_type(dpp::cot_button).
         set_emoji(u8"🔙").
 	    set_style(dpp::cos_primary).
-	    set_id("btn_edit_back_" + std::to_string(ticketIndex))
+	    set_id("btn_edit_back")
         ) 
     );
     bot.direct_message_create(client.id, msg);
@@ -223,11 +237,24 @@ std::string TicketManager::handleBtnPress(dpp::cluster& bot, const dpp::button_c
 
     if (event.custom_id.substr(0,9) == "btn_edit_") {
         if (tktEditing) {
-            if (event.custom_id.substr(0, 13) == "btn_edit_back") {
-                int ticketIndex = std::stoi(event.custom_id.substr(13, 1));
-                Ticket& t = tickets.at(usrId)[ticketIndex];
-                t.setIsEditing(false);
-                return "edit_back";
+            //find target
+            Ticket target("","", "", event.command.usr, false);
+            for (Ticket& t : tickets.at(usrId)) {
+                if (t.isEditing()) {
+                    target = t;
+                }
+            }
+
+            if (event.custom_id == "btn_edit_back") {
+            } else if (event.custom_id == "btn_edit_description") {
+                std::cout << "desc edit" << std::endl;
+            } else if (event.custom_id == "btn_edit_budget") {
+                std::cout << "budget edit" << std::endl;
+            } else if (event.custom_id == "btn_edit_title") {
+                std::cout << "title edit" << std::endl;
+            } else if (event.custom_id == "btn_edit_delete") {
+                deleteTicket(usrId, target);
+                std::cout << "deleted" << std::endl;
             }
         } else {
             if (tktGenerating) {

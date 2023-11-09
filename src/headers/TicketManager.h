@@ -7,6 +7,9 @@ class TicketManager {
     private:
         std::string PRIVATE_CHANNEL_ID = "1164615636337557594";
         std::string PUBLIC_CHANNEL_ID = "1164615615147954277";
+    private:
+        bool deleteTicket(const dpp::snowflake& client, const Ticket& target);
+
     public:
         std::unordered_map<dpp::snowflake, std::vector<Ticket>> tickets; //key is client id 
 
