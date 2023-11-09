@@ -157,3 +157,7 @@ const bool Ticket::isNameInitialized() {
 const bool Ticket::isEditing() {
     return editing;
 }
+
+const bool Ticket::operator==(const Ticket rhs) {
+    return name == rhs.name && description == rhs.description && rhs.budget == rhs.budget && attachments == rhs.attachments && client == rhs.client;
+};

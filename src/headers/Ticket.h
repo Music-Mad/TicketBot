@@ -40,4 +40,7 @@ public:
     const bool isDescInitialized();
     const bool isNameInitialized();
     const bool isEditing();
+
+    //Operators
+    const bool operator==(const Ticket rhs);
 };
