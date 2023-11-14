@@ -225,8 +225,10 @@ bool TicketManager::handleBtnPress(dpp::cluster& bot, const dpp::button_click_t&
 
     
     if (event.custom_id.substr(0, 16) == "btn_status_edit_") {
-        if (tktGenerating || tktEditing) {
+        if (tktGenerating) {
             bot.direct_message_create(usrId, dpp::message("You must finish creating your ticket before using this button. If you want to cancel your current ticket, use /cancel"));
+        } else if (tktEditing) {
+            bot.direct_message_create(usrId, dpp::message("You must finish editing your ticket before selecting another one."));
         } else {
             reviewTicket(event.command.usr, std::stoi(event.custom_id.substr(16, 1)), bot);
         }
