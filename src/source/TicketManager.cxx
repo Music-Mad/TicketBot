@@ -219,7 +219,7 @@ bool TicketManager::handleBtnPress(dpp::cluster& bot, const dpp::button_click_t&
 
         } else
         {
-            return true;
+            return tickets.at(usrId)[0].handleBtnPress(bot, event);
         }
     }
 

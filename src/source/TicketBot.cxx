@@ -65,6 +65,7 @@ int main() {
         }
         event.reply();
     });
+    
     //handle slash commands
     bot.on_slashcommand([&bot, responder](const dpp::slashcommand_t& event) mutable {
         if (event.command.get_command_name() == "request") {
