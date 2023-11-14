@@ -101,6 +101,9 @@ bool TicketManager::deleteTicket(const dpp::snowflake& client, const Ticket& tar
         for (int i = 0; i < tickets.at(client).size(); ++i) {
             if(tickets.at(client)[i] == target) {
                 tickets.at(client).erase(tickets.at(client).begin() + i);
+                if (tickets.at(client).size() <= 0) {
+                    tickets.erase(client);
+                }
                 return true;
             }
         }
