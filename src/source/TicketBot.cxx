@@ -65,7 +65,7 @@ int main() {
         }
         event.reply();
     });
-    
+
     //handle slash commands
     bot.on_slashcommand([&bot, responder](const dpp::slashcommand_t& event) mutable {
         if (event.command.get_command_name() == "request") {
@@ -111,9 +111,7 @@ int main() {
                     bot.direct_message_create(event.msg.author.id, dpp::message("You aren't currently creating a ticket. Use /status if you want to delete a ticket you've already submitted."));
                 }
             } else if (event.msg.content == "/status") {
-                if (!tktManager.listTickets(event.msg.author, bot)) {
-                    bot.direct_message_create(event.msg.author.id, dpp::message("You have no active tickets! Create one with /request!"));
-                }
+                tktManager.listTickets(event.msg.author, bot);
             } else if (tktManager.userHasTktGenerating(event.msg.author)) {
                 if (tktManager.saveResponse(event.msg, 0, bot)){
                     responder.generateTicketResponse(event.msg, event.msg.author, tktManager);

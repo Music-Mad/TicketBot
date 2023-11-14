@@ -48,10 +48,10 @@ const bool TicketManager::listTickets(const dpp::user& client, dpp::cluster& bot
     if(tickets.find(client.id) != tickets.end()) {
         if (userHasTktGenerating(client)) {
             bot.direct_message_create(client.id, dpp::message("Finish creating your ticket or use /cancel before entering the /status menu."));
-            return true;
+            return false;
         } else if (userHasTktEditing(client)) {
             bot.direct_message_create(client.id, dpp::message("You cannot use this command right now. Finish editing the current ticket first."));
-            return true;
+            return false;
         }
         try {
             for (int i = 0; i < tickets.at(client.id).size(); ++i) {
@@ -79,8 +79,12 @@ const bool TicketManager::listTickets(const dpp::user& client, dpp::cluster& bot
             return true;
         } catch (const std::exception& e) {
             std::cout << "Error: listTickets exception" << std::endl;
+            return false;
         }
-    } 
+    } else {
+        bot.direct_message_create(client.id, dpp::message("You have no active tickets! Create one with /request!"));
+        return false;
+    }
     return false;
 };
 
