@@ -77,15 +77,13 @@ int main() {
             }
         } else if (event.command.get_command_name() == "cancel") {
             if (tktManager.cancelTicket(event.command.usr)) {
-                event.reply(dpp::message("Your ticket has been successfully deleted. Please use /request if you would ever like to create a new ticket.").set_flags(dpp::m_ephemeral));
+                event.reply(dpp::message("Your ticket has been successfully canceled. Please use /request if you would ever like to create a new ticket.").set_flags(dpp::m_ephemeral));
             } else {
                 event.reply(dpp::message("You aren't currently creating a ticket. Use /status if you want to delete a ticket you've already submitted.").set_flags(dpp::m_ephemeral));
             }
         } else if (event.command.get_command_name() == "status") {
             if (tktManager.listTickets(event.command.usr, bot)) {
                 event.reply(dpp::message("Check your DM's").set_flags(dpp::m_ephemeral));
-            } else {
-                event.reply(dpp::message("You have no tickets! Create one with /request").set_flags(dpp::m_ephemeral));
             }
         }
     });
@@ -106,7 +104,7 @@ int main() {
                 }
             } else if (event.msg.content == "/cancel") {
                 if (tktManager.cancelTicket(event.msg.author)) {
-                    bot.direct_message_create(event.msg.author.id, dpp::message("Your ticket has been successfully deleted. Please use /request if you would ever like to create a new ticket."));
+                    bot.direct_message_create(event.msg.author.id, dpp::message("Your ticket has been successfully canceled. Please use /request if you would ever like to create a new ticket."));
                 } else {
                     bot.direct_message_create(event.msg.author.id, dpp::message("You aren't currently creating a ticket. Use /status if you want to delete a ticket you've already submitted."));
                 }

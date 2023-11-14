@@ -115,6 +115,9 @@ bool TicketManager::cancelTicket(const dpp::user& client) {
     }
 
     tickets.at(client.id).erase(tickets.at(client.id).begin());
+    if (tickets.at(client.id).size() <= 0) {
+        tickets.erase(client.id);
+    }
     return true;
 };
 
