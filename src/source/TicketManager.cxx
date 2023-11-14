@@ -199,7 +199,7 @@ const bool TicketManager::reviewTicket(const dpp::user& client, int ticketIndex,
     return true;
 };
 
-std::string TicketManager::handleBtnPress(dpp::cluster& bot, const dpp::button_click_t& event) {
+bool TicketManager::handleBtnPress(dpp::cluster& bot, const dpp::button_click_t& event) {
     //cache common data
     const bool tktGenerating = userHasTktGenerating(event.command.usr);
     const bool tktEditing = userHasTktEditing(event.command.usr);
@@ -214,14 +214,12 @@ std::string TicketManager::handleBtnPress(dpp::cluster& bot, const dpp::button_c
             createTicketThread(event.command.usr, bot);
         } else if (event.custom_id == "btn_cancel") {
             cancelTicket(event.command.usr);
-            return "ticket_confirmation_cancelled";
+            bot.direct_message_create(usrId, dpp::message("Your ticket has been successfully deleted. Please use /request if you would like to create a new ticket"));
         } else if (event.custom_id == "btn_change_info") {
 
         } else
         {
-            if (tickets.at(usrId)[0].handleBtnPress(bot, event)) {
-                return "stage_ticket_response";
-            }
+            return true;
         }
     }
 
@@ -231,7 +229,6 @@ std::string TicketManager::handleBtnPress(dpp::cluster& bot, const dpp::button_c
             bot.direct_message_create(usrId, dpp::message("You must finish creating your ticket before using this button. If you want to cancel your current ticket, use /cancel"));
         } else {
             reviewTicket(event.command.usr, std::stoi(event.custom_id.substr(16, 1)), bot);
-            return "status_edit_ticket";
         }
     }
 
@@ -254,18 +251,17 @@ std::string TicketManager::handleBtnPress(dpp::cluster& bot, const dpp::button_c
                 std::cout << "title edit" << std::endl;
             } else if (event.custom_id == "btn_edit_delete") {
                 deleteTicket(usrId, target);
-                std::cout << "deleted" << std::endl;
+                bot.direct_message_create(usrId, dpp::message("Ticket deleted!"));
             }
         } else {
             if (tktGenerating) {
-                return "edit_failed_generating";
+                bot.direct_message_create(usrId, dpp::message("You cannot edit a ticket while creating a new one. Use /cancel to cancel the creation process."));
             }
-            return "edit_failed_unknown";
+            bot.direct_message_create(usrId, dpp::message("That action cannot be processed at this time."));
         }
-
     }
 
 
-    return "";
+    return false;
 };
 
