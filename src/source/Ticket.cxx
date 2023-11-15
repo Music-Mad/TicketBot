@@ -155,6 +155,9 @@ void Ticket::setEditingExpectation(std::string val) {
 
 void Ticket::setIsEditing(bool val) {
     editing = val;
+    if (!editing) {
+        editingExpectation = "";
+    }
 };
 
 const bool Ticket::isGenerating() {
