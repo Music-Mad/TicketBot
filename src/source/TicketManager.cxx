@@ -43,15 +43,13 @@ const bool TicketManager::userHasTktEditing(const dpp::user& user) {
     return false;
 };
 
-const Ticket TicketManager::getEditingTicket(const dpp::snowflake& clientId) {
-    if (tickets.find(clientId) == tickets.end()) {
-        return Ticket();
-    }
-    for (Ticket t : tickets.at(clientId)) {
+Ticket* TicketManager::getEditingTicket(const dpp::snowflake& clientId) {
+    for (Ticket& t : tickets.at(clientId)) {
         if (t.isEditing()) {
-            return t;
+            return &t;
         }
     }
+    return nullptr;
 };
 
 const bool TicketManager::listTickets(const dpp::user& client, dpp::cluster& bot) {
@@ -259,19 +257,20 @@ bool TicketManager::handleBtnPress(dpp::cluster& bot, const dpp::button_click_t&
     if (event.custom_id.substr(0,9) == "btn_edit_") {
         if (tktEditing) {
             //find target
-            Ticket target("","", "", event.command.usr, false);
-            for (Ticket& t : tickets.at(usrId)) {
-                if (t.isEditing()) {
-                    target = t;
-                }
-            }
+            Ticket& target = *getEditingTicket(usrId);
             
             if (event.custom_id == "btn_edit_back") {
+                target.setIsEditing(false);
+                std::cout << target.isEditing() << std::endl;
+                std::cout << userHasTktEditing(event.command.usr) << std::endl;
             } else if (event.custom_id == "btn_edit_description") {
+                target.setEditingExpectation("description");
                 bot.direct_message_create(usrId, dpp::message("Type a new description below:"));
             } else if (event.custom_id == "btn_edit_budget") {
+                target.setEditingExpectation("budget");
                 bot.direct_message_create(usrId, dpp::message("Type a new budget below:"));
             } else if (event.custom_id == "btn_edit_title") {
+                target.setEditingExpectation("name");
                 bot.direct_message_create(usrId, dpp::message("Type a new title below:"));
             } else if (event.custom_id == "btn_edit_delete") {
                 deleteTicket(usrId, target);
