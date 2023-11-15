@@ -1,5 +1,17 @@
 #include "../headers/Ticket.h"
 
+Ticket::Ticket() {
+    budget = "";
+    description = "";
+    name = "";
+    generating = false;
+    client = dpp::user();
+    budgetIsTokens = false;
+    currencyBtnsDisabled = false;
+    attachmentsSubmitted = false;
+    editingExpectation = "";
+}
+
 Ticket::Ticket(const std::string& budget_in, const std::string& description_in, const std::string& name_in, const dpp::user& client_in, bool isGenerating_in) {
     budget = budget_in;
     description = description_in;

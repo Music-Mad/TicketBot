@@ -21,6 +21,7 @@ private:
     bool attachmentsSubmitted;
 
 public:
+    Ticket();
     Ticket(const std::string& budget_in, const std::string& description_in, const std::string& name_in, const dpp::user& client_in, bool isGenerating_in);
     bool storeResponse(const dpp::message& response, dpp::cluster& bot);
     bool handleBtnPress(dpp::cluster& bot, const dpp::button_click_t& event);
