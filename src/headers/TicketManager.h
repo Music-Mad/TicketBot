@@ -24,7 +24,6 @@ class TicketManager {
         const bool listTickets(const dpp::user& client, dpp::cluster& bot);
         void addTicket(const dpp::user& client);
         bool cancelTicket(const dpp::user& client); //Deletes ticket CURRENTLY being created
-        bool deleteTicket(const dpp::snowflake& client, const Ticket& target); //deletes target entry regardless of status
 
         //client facing operations
         bool createTicketThread(const dpp::user& client, dpp::cluster& bot);
