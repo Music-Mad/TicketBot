@@ -43,6 +43,16 @@ const bool TicketManager::userHasTktEditing(const dpp::user& user) {
     return false;
 };
 
+const Ticket TicketManager::getEditingTicket(const dpp::snowflake& clientId) {
+    if (tickets.find(clientId) == tickets.end()) {
+        return Ticket();
+    }
+    for (Ticket t : tickets.at(clientId)) {
+        if (t.isEditing()) {
+            return t;
+        }
+    }
+};
 
 const bool TicketManager::listTickets(const dpp::user& client, dpp::cluster& bot) {
     if(tickets.find(client.id) != tickets.end()) {
@@ -205,6 +215,7 @@ const bool TicketManager::reviewTicket(const dpp::user& client, int ticketIndex,
 	    set_id("btn_edit_back")
         ) 
     );
+
     bot.direct_message_create(client.id, msg);
     return true;
 };
@@ -240,6 +251,7 @@ bool TicketManager::handleBtnPress(dpp::cluster& bot, const dpp::button_click_t&
         } else if (tktEditing) {
             bot.direct_message_create(usrId, dpp::message("You must finish editing your ticket before selecting another one."));
         } else {
+
             reviewTicket(event.command.usr, std::stoi(event.custom_id.substr(16, 1)), bot);
         }
     }
@@ -253,14 +265,14 @@ bool TicketManager::handleBtnPress(dpp::cluster& bot, const dpp::button_click_t&
                     target = t;
                 }
             }
-
+            
             if (event.custom_id == "btn_edit_back") {
             } else if (event.custom_id == "btn_edit_description") {
-                std::cout << "desc edit" << std::endl;
+                bot.direct_message_create(usrId, dpp::message("Type a new description below:"));
             } else if (event.custom_id == "btn_edit_budget") {
-                std::cout << "budget edit" << std::endl;
+                bot.direct_message_create(usrId, dpp::message("Type a new budget below:"));
             } else if (event.custom_id == "btn_edit_title") {
-                std::cout << "title edit" << std::endl;
+                bot.direct_message_create(usrId, dpp::message("Type a new title below:"));
             } else if (event.custom_id == "btn_edit_delete") {
                 deleteTicket(usrId, target);
                 bot.direct_message_create(usrId, dpp::message("Ticket deleted!"));

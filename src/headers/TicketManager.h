@@ -9,6 +9,7 @@ class TicketManager {
         std::string PUBLIC_CHANNEL_ID = "1164615615147954277";
     private:
         bool deleteTicket(const dpp::snowflake& client, const Ticket& target);
+        const Ticket getEditingTicket(const dpp::snowflake& clientId); //gets ticket currently editing for client. Returns empty ticket if map entry is empty.
 
     public:
         std::unordered_map<dpp::snowflake, std::vector<Ticket>> tickets; //key is client id 
