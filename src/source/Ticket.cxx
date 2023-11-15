@@ -9,7 +9,7 @@ Ticket::Ticket(const std::string& budget_in, const std::string& description_in, 
     budgetIsTokens = false;
     currencyBtnsDisabled = false;
     attachmentsSubmitted = false;
-    editing = false;
+    editingExpectation = "";
 };
 
 bool Ticket::storeResponse(const dpp::message& response, dpp::cluster& bot) {
@@ -62,6 +62,17 @@ bool Ticket::storeResponse(const dpp::message& response, dpp::cluster& bot) {
     } else if (name == "") {
         name = response.content;
         return true;
+    }else if (editing) {
+        if (editingExpectation == "Budget") {
+            budget = response.content;
+            return true;
+        } else if (editingExpectation == "Description") {
+            description = response.content;
+            return true;
+        } else if (editingExpectation == "Name") {
+            name = response.content;
+            return true;
+        }
     }
     return false;
 };
@@ -109,7 +120,7 @@ const std::string Ticket::compileAttachments() {
     std::string imgs = "";
     for (dpp::attachment att : attachments)
         {
-            imgs += " " + att.url;
+            imgs += att.url + " ";
         }
     return imgs;
 };
@@ -126,9 +137,13 @@ void Ticket::setIsGenerating(bool val) {
     generating = val;
 }
 
+void Ticket::setEditingExpectation(std::string val) {
+    editingExpectation = val;
+}
+
 void Ticket::setIsEditing(bool val) {
     editing = val;
-}
+};
 
 const bool Ticket::isGenerating() {
     return generating;
