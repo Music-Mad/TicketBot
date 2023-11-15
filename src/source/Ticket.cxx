@@ -75,13 +75,13 @@ bool Ticket::storeResponse(const dpp::message& response, dpp::cluster& bot) {
         name = response.content;
         return true;
     }else if (editing) {
-        if (editingExpectation == "Budget") {
+        if (editingExpectation == "budget") {
             budget = response.content;
             return true;
-        } else if (editingExpectation == "Description") {
+        } else if (editingExpectation == "description") {
             description = response.content;
             return true;
-        } else if (editingExpectation == "Name") {
+        } else if (editingExpectation == "name") {
             name = response.content;
             return true;
         }
