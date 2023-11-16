@@ -77,14 +77,13 @@ bool Ticket::storeResponse(const dpp::message& response, dpp::cluster& bot) {
     }else if (editing) {
         if (editingExpectation == "budget") {
             budget = response.content;
-            return true;
         } else if (editingExpectation == "description") {
             description = response.content;
-            return true;
         } else if (editingExpectation == "name") {
             name = response.content;
-            return true;
         }
+        bot.direct_message_create(client.id, dpp::message("Changes saved!"));
+        return true;
     }
     return false;
 };
