@@ -155,14 +155,21 @@ bool TicketManager::createTicketThread(const dpp::user& client, dpp::cluster& bo
     return false;
 };
 
-bool TicketManager::saveResponse(const dpp::message& response, int ticketIndex, dpp::cluster& bot) {
+bool TicketManager::saveResponse(const dpp::message& response, int ticketIndex, bool isGenerating, dpp::cluster& bot) {
     //cache client and ticket
     dpp::user client = response.author;
     if (tickets.find(client.id) == tickets.end()) { 
         return false; //if ticket doesn't exist
     }
-    Ticket& request = tickets[client.id][ticketIndex];
-    return request.storeResponse(response, bot);
+    if (isGenerating) {
+        Ticket& request = tickets[client.id][ticketIndex];
+        return request.storeResponse(response, bot);
+    } else if (userHasTktEditing(client))
+    {
+        Ticket& request = *getEditingTicket(client.id);
+        return request.storeResponse(response, bot);
+    } 
+    return false;
 };
 
 const bool TicketManager::reviewTicket(const dpp::user& client, int ticketIndex, dpp::cluster& bot) { 
@@ -261,8 +268,6 @@ bool TicketManager::handleBtnPress(dpp::cluster& bot, const dpp::button_click_t&
             
             if (event.custom_id == "btn_edit_back") {
                 target.setIsEditing(false);
-                std::cout << target.isEditing() << std::endl;
-                std::cout << userHasTktEditing(event.command.usr) << std::endl;
             } else if (event.custom_id == "btn_edit_description") {
                 target.setEditingExpectation("description");
                 bot.direct_message_create(usrId, dpp::message("Type a new description below:"));

@@ -9,7 +9,7 @@ class TicketManager {
         std::string PUBLIC_CHANNEL_ID = "1164615615147954277";
     private:
         bool deleteTicket(const dpp::snowflake& client, const Ticket& target);
-        Ticket* getEditingTicket(const dpp::snowflake& clientId); //gets ticket currently editing for client. Returns empty ticket if map entry is empty.
+        Ticket* getEditingTicket(const dpp::snowflake& clientId); //gets ticket currently editing for client. Returns empty ptr if map entry is empty.
 
     public:
         std::unordered_map<dpp::snowflake, std::vector<Ticket>> tickets; //key is client id 
@@ -28,7 +28,7 @@ class TicketManager {
 
         //client facing operations
         bool createTicketThread(const dpp::user& client, dpp::cluster& bot);
-        bool saveResponse(const dpp::message& response, int ticketIndex, dpp::cluster& bot); //save response in ticket depending on gen stage
+        bool saveResponse(const dpp::message& response, int ticketIndex, bool isGenerating, dpp::cluster& bot); //save response in ticket depending on gen stage
         bool handleBtnPress(dpp::cluster& bot, const dpp::button_click_t& event); //return true if tktResponse needs to be called
         const bool reviewTicket(const dpp::user&client, int ticketIndex, dpp::cluster& bot); //opens review/edit menu
 
