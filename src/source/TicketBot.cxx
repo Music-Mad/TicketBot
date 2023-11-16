@@ -111,9 +111,11 @@ int main() {
             } else if (event.msg.content == "/status") {
                 tktManager.listTickets(event.msg.author, bot);
             } else if (tktManager.userHasTktGenerating(event.msg.author)) {
-                if (tktManager.saveResponse(event.msg, 0, bot)){
+                if (tktManager.saveResponse(event.msg, 0, true, bot)){
                     responder.generateTicketResponse(event.msg, event.msg.author, tktManager);
                 }
+            } else if (tktManager.userHasTktEditing(event.msg.author)) {
+                tktManager.saveResponse(event.msg, 0, false, bot);
             }
         }
     });
