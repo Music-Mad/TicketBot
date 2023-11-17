@@ -119,7 +119,6 @@ bool TicketManager::deleteTicket(const dpp::snowflake& client, const Ticket& tar
     return false;
 };
 
-
 bool TicketManager::cancelTicket(const dpp::user& client) {
     if (!userHasTktGenerating(client)) {
         return false;
@@ -167,7 +166,13 @@ bool TicketManager::saveResponse(const dpp::message& response, int ticketIndex, 
     } else if (userHasTktEditing(client))
     {
         Ticket& request = *getEditingTicket(client.id);
-        return request.storeResponse(response, bot);
+        if (request.storeResponse(response, bot)) {
+            auto it = std::find(tickets.at(client.id).begin(), tickets.at(client.id).end(), request);
+            int i = it - tickets.at(client.id).begin();
+            reviewTicket(client, i, bot);
+            return true;
+        }
+        return false;
     } 
     return false;
 };
@@ -268,6 +273,7 @@ bool TicketManager::handleBtnPress(dpp::cluster& bot, const dpp::button_click_t&
             
             if (event.custom_id == "btn_edit_back") {
                 target.setIsEditing(false);
+                listTickets(event.command.usr, bot);
             } else if (event.custom_id == "btn_edit_description") {
                 target.setEditingExpectation("description");
                 bot.direct_message_create(usrId, dpp::message("Type a new description below:"));
