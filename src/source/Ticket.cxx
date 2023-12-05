@@ -107,7 +107,7 @@ bool Ticket::handleBtnPress(dpp::cluster& bot, const dpp::button_click_t& event)
     return false;
 };
 
-const std::string Ticket::compileBody() {
+std::string Ticket::compileBody() const {
     std::string currency;
     if (budgetIsTokens)
     {
@@ -127,7 +127,7 @@ Description - )" + description;
     return ticket;
 };
 
-const std::string Ticket::compileAttachments() {
+std::string Ticket::compileAttachments() const {
     std::string imgs = "";
     for (dpp::attachment att : attachments)
         {
@@ -136,11 +136,11 @@ const std::string Ticket::compileAttachments() {
     return imgs;
 };
 
-const std::string Ticket::getName() {
+std::string Ticket::getName() const {
     return name;
 };
 
-const bool Ticket::isBudgetTokens() {
+bool Ticket::isBudgetTokens() const {
     return budgetIsTokens;
 }
 
@@ -159,34 +159,34 @@ void Ticket::setIsEditing(bool val) {
     }
 };
 
-const bool Ticket::isGenerating() {
+bool Ticket::isGenerating() const {
     return generating;
 };
 
-const bool Ticket::isCurrencyBtnsDisabled() {
+bool Ticket::isCurrencyBtnsDisabled() const {
     return currencyBtnsDisabled;
 };
 
-const bool Ticket::isAttachmentsSubmitted() {
+bool Ticket::isAttachmentsSubmitted() const {
     return attachmentsSubmitted;
 };
 
-const bool Ticket::isBudgetInitialized() {
+bool Ticket::isBudgetInitialized() const {
     return budget != "";
 }
 
-const bool Ticket::isDescInitialized() {
+bool Ticket::isDescInitialized() const {
     return description != "";
 }
 
-const bool Ticket::isNameInitialized() {
+bool Ticket::isNameInitialized() const {
     return name != "";
 }
 
-const bool Ticket::isEditing() {
+bool Ticket::isEditing() const {
     return editing;
 }
 
-const bool Ticket::operator==(const Ticket rhs) {
+bool Ticket::operator==(const Ticket rhs) const {
     return name == rhs.name && description == rhs.description && rhs.budget == rhs.budget && client == rhs.client;
 };

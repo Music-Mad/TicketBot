@@ -25,12 +25,12 @@ public:
     Ticket(const std::string& budget_in, const std::string& description_in, const std::string& name_in, const dpp::user& client_in, bool isGenerating_in);
     bool storeResponse(const dpp::message& response, dpp::cluster& bot);
     bool handleBtnPress(dpp::cluster& bot, const dpp::button_click_t& event);
-    const std::string compileBody();
-    const std::string compileAttachments();
+    std::string compileBody() const;
+    std::string compileAttachments() const;
     
     //getters
-    const std::string getName();
-    const bool isBudgetTokens();
+    std::string getName() const;
+    bool isBudgetTokens() const;
 
     //setters
     void setIsGenerating(bool val);
@@ -38,14 +38,14 @@ public:
     void setIsEditing(bool val);
     
     //for getting ticket gen state
-    const bool isGenerating();
-    const bool isCurrencyBtnsDisabled();
-    const bool isAttachmentsSubmitted();
-    const bool isBudgetInitialized();
-    const bool isDescInitialized();
-    const bool isNameInitialized();
-    const bool isEditing();
+    bool isGenerating() const;
+    bool isCurrencyBtnsDisabled() const;
+    bool isAttachmentsSubmitted() const;
+    bool isBudgetInitialized() const;
+    bool isDescInitialized() const;
+    bool isNameInitialized() const;
+    bool isEditing() const;
 
     //Operators
-    const bool operator==(const Ticket rhs);
+    bool operator==(const Ticket rhs) const;
 };
