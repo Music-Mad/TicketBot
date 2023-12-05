@@ -108,8 +108,6 @@ int main() {
                 } else {
                     bot.direct_message_create(event.msg.author.id, dpp::message("You aren't currently creating a ticket. Use /status if you want to delete a ticket you've already submitted."));
                 }
-            } else if (event.msg.content == "/status") {
-                tktManager.listTickets(event.msg.author, bot);
             } else if (tktManager.userHasTktGenerating(event.msg.author)) {
                 if (tktManager.saveResponse(event.msg, 0, true, bot)){
                     responder.generateTicketResponse(event.msg, event.msg.author, tktManager);
@@ -129,13 +127,11 @@ int main() {
             dpp::slashcommand openCommission("open_ticket", "Open a commission for all verified creators", bot.me.id);
             dpp::slashcommand cancelRequest("cancel", "cancel a ticket in-progress", bot.me.id);
             dpp::slashcommand closeTicket("close_ticket", "Close a ticket thread", bot.me.id);
-            dpp::slashcommand getStatus("status", "Manage the status of your commission request", bot.me.id);
 
             bot.guild_command_create(requestCommand, GUILD_ID);
             bot.guild_command_create(openCommission, GUILD_ID);
             bot.guild_command_create(cancelRequest, GUILD_ID);
             bot.guild_command_create(closeTicket, GUILD_ID);
-            bot.guild_command_create(getStatus, GUILD_ID);
         }
     });
     /* Start the bot */
