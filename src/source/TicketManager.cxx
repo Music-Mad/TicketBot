@@ -131,27 +131,25 @@ bool TicketManager::cancelTicket(const dpp::user& client) {
     return true;
 };
 
-bool TicketManager::createTicketThread(const dpp::user& client, dpp::cluster& bot) {
-    
-    bot.thread_create(tickets[client.id].front().getName(), PRIVATE_CHANNEL_ID, 60, dpp::CHANNEL_PUBLIC_THREAD, false, 0, [&bot, this, client] (auto callback){
-        if (!callback.is_error())
-        {   
-            //retrieve thread
-            dpp::thread myThread = std::get<dpp::thread>(callback.value);
-            //generate ticket
-            Ticket& t = tickets.at(client.id)[0];
-            dpp::message msg(myThread.id, t.compileBody() + "\n" + t.compileAttachments());
-            //send
+bool TicketManager::createTicket(const dpp::user& client, dpp::cluster& bot) {
+    try {
+        //cache ticket
+        const Ticket& t = tickets.at(client.id)[0];
+        //create channel for thread
+        dpp::channel c;
+        c.set_guild_id(GUILD_ID);
+        c.set_parent_id(PRIVATE_CATEGORY_ID);
+        c.set_name(t.getName());
+        bot.channel_create(c, [t, &bot](const dpp::confirmation_callback_t& callback) {
+            //get channel id and send ticket data
+            dpp::channel new_channel = std::get <dpp::channel>(callback.value);
+            dpp::message msg(new_channel.id, t.compileBody() + "\n" + t.compileAttachments());
             bot.message_create(msg);
-            return true;
-        } else {
-            dpp::utility::log_error();
-            std::string errorMsg = callback.get_error().message;
-            std::cout << errorMsg << std::endl;
-            return false;
-        }
-    });
-    return false;
+        });
+        return true;
+    } catch (...) {
+        return false;
+    }
 };
 
 bool TicketManager::saveResponse(const dpp::message& response, int ticketIndex, bool isGenerating, dpp::cluster& bot) {
@@ -242,7 +240,7 @@ bool TicketManager::handleBtnPress(dpp::cluster& bot, const dpp::button_click_t&
             tickets.at(usrId)[0].setIsGenerating(false);
             dpp::message confirmationMsg("Thank you for your request! Your response has been saved and sent to our verified creators for review. You will recieve a DM from a creator if they would like to fulfill your commission. After one week of inactivity, your request will automatically be closed. Please reach out to an Ink Overflow admin if you have any questions");
             bot.direct_message_create(usrId, confirmationMsg);
-            createTicketThread(event.command.usr, bot);
+            createTicket(event.command.usr, bot);
         } else if (event.custom_id == "btn_cancel") {
             cancelTicket(event.command.usr);
             bot.direct_message_create(usrId, dpp::message("Your ticket has been successfully deleted. Please use /request if you would like to create a new ticket"));
