@@ -297,3 +297,14 @@ bool TicketManager::handleBtnPress(dpp::cluster& bot, const dpp::button_click_t&
     return false;
 };
 
+bool TicketManager::publishTicket(const dpp::channel& channel, dpp::cluster& bot) {
+    try { 
+        dpp::channel c = channel;
+        c.set_parent_id(PUBLIC_CATEGORY_ID);
+        bot.channel_edit(c,[](auto const& callback) {});
+        return true;
+    } catch( ... ) {
+        std::cout << "ERROR: Failed to publish ticket\n";
+        return false;
+    }
+};
