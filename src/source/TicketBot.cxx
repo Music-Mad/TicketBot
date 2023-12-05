@@ -85,6 +85,11 @@ int main() {
             if (tktManager.listTickets(event.command.usr, bot)) {
                 event.reply(dpp::message("Check your DM's").set_flags(dpp::m_ephemeral));
             }
+        } else if (event.command.get_command_name() == "open_ticket") {
+            tktManager.publishTicket(event.command.channel, bot);
+            event.reply(dpp::message("This ticket is now public.").set_flags(dpp::m_ephemeral));
+        } else {
+            std::cout << "Command " << event.command.get_command_name() << " not recognized\n";
         }
     });
 
@@ -124,12 +129,12 @@ int main() {
         if (dpp::run_once<struct register_bot_commands>()) {
 
             dpp::slashcommand requestCommand("request", "Create a commission request", bot.me.id);
-            dpp::slashcommand openCommission("open_ticket", "Open a commission for all verified creators", bot.me.id);
+            dpp::slashcommand openTicket("open_ticket", "Open a commission for all verified creators", bot.me.id);
             dpp::slashcommand cancelRequest("cancel", "cancel a ticket in-progress", bot.me.id);
             dpp::slashcommand closeTicket("close_ticket", "Close a ticket thread", bot.me.id);
 
             bot.guild_command_create(requestCommand, GUILD_ID);
-            bot.guild_command_create(openCommission, GUILD_ID);
+            bot.guild_command_create(openTicket, GUILD_ID);
             bot.guild_command_create(cancelRequest, GUILD_ID);
             bot.guild_command_create(closeTicket, GUILD_ID);
         }
