@@ -9,7 +9,6 @@ Ticket::Ticket() {
     budgetIsTokens = false;
     currencyBtnsDisabled = false;
     attachmentsSubmitted = false;
-    editingExpectation = "";
 }
 
 Ticket::Ticket(const std::string& budget_in, const std::string& description_in, const std::string& name_in, const dpp::user& client_in, bool isGenerating_in) {
@@ -21,7 +20,6 @@ Ticket::Ticket(const std::string& budget_in, const std::string& description_in, 
     budgetIsTokens = false;
     currencyBtnsDisabled = false;
     attachmentsSubmitted = false;
-    editingExpectation = "";
 };
 
 bool Ticket::storeResponse(const dpp::message& response, dpp::cluster& bot) {
@@ -73,16 +71,6 @@ bool Ticket::storeResponse(const dpp::message& response, dpp::cluster& bot) {
         }
     } else if (name == "") {
         name = response.content;
-        return true;
-    }else if (editing) {
-        if (editingExpectation == "budget") {
-            budget = response.content;
-        } else if (editingExpectation == "description") {
-            description = response.content;
-        } else if (editingExpectation == "name") {
-            name = response.content;
-        }
-        bot.direct_message_create(client.id, dpp::message("Changes saved!"));
         return true;
     }
     return false;
@@ -152,17 +140,6 @@ void Ticket::setIsGenerating(bool val) {
     generating = val;
 }
 
-void Ticket::setEditingExpectation(std::string val) {
-    editingExpectation = val;
-}
-
-void Ticket::setIsEditing(bool val) {
-    editing = val;
-    if (!editing) {
-        editingExpectation = "";
-    }
-};
-
 bool Ticket::isGenerating() const {
     return generating;
 };
@@ -185,10 +162,6 @@ bool Ticket::isDescInitialized() const {
 
 bool Ticket::isNameInitialized() const {
     return name != "";
-}
-
-bool Ticket::isEditing() const {
-    return editing;
 }
 
 bool Ticket::operator==(const Ticket rhs) const {
