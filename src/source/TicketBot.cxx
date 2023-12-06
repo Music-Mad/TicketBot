@@ -9,7 +9,10 @@
 
 //constants
 const std::string GUILD_ID = "976104010924847137";
-const std::string BOT_TOKEN = "OTc1ODk1MTI3MjI0NjM1NDMy.GU41IO.mSyyBcIcgkZ1Wkoyhv8XPDfHUWs35y8aRxzU7E";
+const std::string VERIFS_ID = "1139260164906700920";
+const std::string ADMIN_ID = "1138102566476058735";
+const std::string PUBLIC_CATEGORY_ID = "1164614806502899845";
+const std::string PRIVATE_CATEGORY_ID = "1164614854125027328";
 
 //default callback for error debugging
 void defaultCallback(dpp::confirmation_callback_t callback) {
@@ -84,7 +87,25 @@ int main() {
         } else if (event.command.get_command_name() == "open_ticket") {
             tktManager.publishTicket(event.command.channel, bot);
             event.reply(dpp::message("This ticket is now public.").set_flags(dpp::m_ephemeral));
-        } else {
+        } else if (event.command.get_command_name() == "close_ticket") {
+
+            if (event.command.channel.parent_id != dpp::snowflake(PUBLIC_CATEGORY_ID) && event.command.channel.parent_id != dpp::snowflake(PRIVATE_CATEGORY_ID)) {
+                event.reply(dpp::message("This channel is not an open ticket").set_flags(dpp::m_ephemeral));
+                return;
+            }
+
+            auto& userRoles = event.command.member.get_roles();
+            if (std::find(userRoles.begin(), userRoles.end(), dpp::snowflake(VERIFS_ID)) != userRoles.end()) { //If user has verif role, cmd fails
+                if (std::find(userRoles.begin(), userRoles.end(), dpp::snowflake(ADMIN_ID)) == userRoles.end()) { //If user isnt admin
+                    event.reply(dpp::message("You can't close someone else's commission.").set_flags(dpp::m_ephemeral));
+                    return;
+                }
+            } 
+
+            event.reply(dpp::message("Closing ticket...").set_flags(dpp::m_ephemeral));
+            tktManager.closeTicketChannel(event.command.channel, bot);
+        } 
+        else {
             std::cout << "Command " << event.command.get_command_name() << " not recognized\n";
         }
     });
