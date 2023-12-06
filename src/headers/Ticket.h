@@ -31,7 +31,7 @@ public:
     //getters
     std::string getName() const;
     bool isBudgetTokens() const;
-
+    std::vector<dpp::attachment> getAttachments() const;
     //setters
     void setIsGenerating(bool val);
     void setEditingExpectation(std::string val);

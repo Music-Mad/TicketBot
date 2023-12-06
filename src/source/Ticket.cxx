@@ -136,6 +136,10 @@ std::string Ticket::compileAttachments() const {
     return imgs;
 };
 
+std::vector<dpp::attachment> Ticket::getAttachments() const {
+    return attachments;
+}
+
 std::string Ticket::getName() const {
     return name;
 };
