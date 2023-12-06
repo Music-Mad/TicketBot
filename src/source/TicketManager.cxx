@@ -66,6 +66,16 @@ bool TicketManager::createTicketChannel(const dpp::user& client, dpp::cluster& b
     }
 };
 
+bool TicketManager::closeTicketChannel( const dpp::channel& channel, dpp::cluster& bot) {
+    try {
+        bot.channel_delete(channel.id);
+        return true;
+    } catch (...) {
+        std::cout << "ERROR: Failed to delete channel" << std::endl;
+        return false;
+    }
+};
+
 bool TicketManager::saveResponse(const dpp::message& response, dpp::cluster& bot) {
     //cache client and ticket
     dpp::user client = response.author;
