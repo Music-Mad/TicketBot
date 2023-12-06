@@ -45,7 +45,7 @@ bool TicketManager::cancelTicket(const dpp::user& client) {
     return true;
 };
 
-bool TicketManager::createTicket(const dpp::user& client, dpp::cluster& bot) {
+bool TicketManager::createTicketChannel(const dpp::user& client, dpp::cluster& bot) {
     try {
         //cache ticket
         const Ticket& t = ticketsGenerating.at(client.id);
@@ -88,7 +88,7 @@ bool TicketManager::handleBtnPress(dpp::cluster& bot, const dpp::button_click_t&
     }
 
     if (event.custom_id == "btn_submit") {
-            if (!createTicket(event.command.usr, bot)) {
+            if (!createTicketChannel(event.command.usr, bot)) {
                 dpp::message errorMsg("Failed to generate ticket. Please submit a bug report at https://forms.gle/NL8JgbAS13BXEBJD6");
                 bot.direct_message_create(usrId, errorMsg);
                 return false;

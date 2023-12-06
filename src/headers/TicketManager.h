@@ -22,8 +22,9 @@ class TicketManager {
         bool cancelTicket(const dpp::user& client); //Deletes ticket CURRENTLY being created
 
         //usr facing operations
-        bool createTicket(const dpp::user& client, dpp::cluster& bot);
+        bool createTicketChannel(const dpp::user& client, dpp::cluster& bot);
         bool saveResponse(const dpp::message& response, dpp::cluster& bot); //save response in generating ticket depending on gen stage
         bool handleBtnPress(dpp::cluster& bot, const dpp::button_click_t& event); //return true if tktResponse needs to be called
         bool publishTicket(const dpp::channel& channel, dpp::cluster& bot); //Moves ticket channel from Private to Public category
+        
 };
