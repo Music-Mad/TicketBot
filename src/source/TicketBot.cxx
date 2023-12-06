@@ -8,11 +8,13 @@
 #include "rapidjson/document.h" 
 
 //constants
-const std::string GUILD_ID = "976104010924847137";
-const std::string VERIFS_ID = "1139260164906700920";
-const std::string ADMIN_ID = "1138102566476058735";
-const std::string PUBLIC_CATEGORY_ID = "1164614806502899845";
-const std::string PRIVATE_CATEGORY_ID = "1164614854125027328";
+
+std::string BOT_TOKEN;
+std::string GUILD_ID;
+std::string VERIFS_ID;
+std::string ADMIN_ID;
+std::string PUBLIC_CATEGORY_ID;
+std::string PRIVATE_CATEGORY_ID;
 
 //default callback for error debugging
 void defaultCallback(dpp::confirmation_callback_t callback) {
@@ -23,17 +25,26 @@ void defaultCallback(dpp::confirmation_callback_t callback) {
     }
 };
 
+bool readStringFromJSON(rapidjson::Document& doc, const char* key, std::string& variable, const std::string& errorMsg) {
+    if (doc.HasMember(key) && doc[key].IsString()) {
+        variable = doc[key].GetString();
+        return true;
+    } else {
+        std::cerr << errorMsg << std::endl;
+        return false;
+    }
+}
+
 TicketManager tktManager;
 
 int main() {
 
-    std::ifstream config("/root/TicketBot/config.json");
+    std::ifstream config("/root/TicketBot/private_config.json");
     if (!config.is_open()) {
         std::cout << "Cannot open config.json" << std::endl;
         return 0;
     }
 
-    std::string botToken;
     std::string jsonContent((std::istreambuf_iterator<char>(config)), std::istreambuf_iterator<char>());
     config.close();
     // Parse the JSON content
@@ -41,20 +52,20 @@ int main() {
     doc.Parse(jsonContent.c_str());
     // Check if parsing was successful
     if (!doc.HasParseError() && doc.IsObject()) {
-        // Access the API key
-        if (doc.HasMember("dpp_key") && doc["dpp_key"].IsString()) {
-            botToken = doc["dpp_key"].GetString();
-        } else {
-            std::cerr << "Error: Missing or invalid 'api_key' in the configuration file." << std::endl;
-            return 0;
-        }
+        // Read JSON data
+        readStringFromJSON(doc, "api_key", BOT_TOKEN, "Error: Missing or invalid 'api_key' in the config.json file.");
+        readStringFromJSON(doc, "guild_id", GUILD_ID, "Error: Missing or invalid 'guild_id' in the config.json file.");
+        readStringFromJSON(doc, "public_category_id", PUBLIC_CATEGORY_ID, "Error: Missing or invalid 'public_category_id' in the config.json file.");
+        readStringFromJSON(doc, "private_category_id", PRIVATE_CATEGORY_ID, "Error: Missing or invalid 'private_category_id' in the config.json file.");
+        readStringFromJSON(doc, "verified_creator_id", VERIFS_ID, "Error: Missing or invalid 'verified_category_id' in the config.json file.");
+        readStringFromJSON(doc, "admin_id", ADMIN_ID, "Error: Missing or invalid 'admin_id' in the config.json file.");
     } else {
         std::cerr << "Error: Invalid JSON format in the configuration file." << std::endl;
         return 0;
     }
 
     /* Create bot cluster */
-    dpp::cluster bot(botToken, dpp::i_message_content | dpp::i_direct_messages | dpp::i_guild_message_reactions);
+    dpp::cluster bot(BOT_TOKEN, dpp::i_message_content | dpp::i_direct_messages | dpp::i_guild_message_reactions);
     Responder responder(bot);
     
     /* Output simple log messages to stdout */
@@ -106,7 +117,7 @@ int main() {
             tktManager.closeTicketChannel(event.command.channel, bot);
         } 
         else {
-            std::cout << "Command " << event.command.get_command_name() << " not recognized\n";
+            std::cout << "Command " << event.command.get_command_name() << " not recognized" << std::endl;
         }
     });
 
