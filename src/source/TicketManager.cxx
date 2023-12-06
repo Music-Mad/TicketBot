@@ -3,55 +3,37 @@
 TicketManager::TicketManager()
 {};
 
-const std::string TicketManager::compileBody(const dpp::snowflake& client_id, const int ticketIndex) {
-    if ((tickets.find(client_id) != tickets.end()) && (ticketIndex < tickets.at(client_id).size())) {
-        return tickets.at(client_id)[ticketIndex].compileBody();
+const std::string TicketManager::compileBody(const dpp::snowflake& client_id) {
+    if (ticketsGenerating.find(client_id) != ticketsGenerating.end()) {
+        return ticketsGenerating.at(client_id).compileBody();
     } else {
         return "";
     }
 };
 
-const std::string TicketManager::compileAttatchments(const dpp::snowflake& client_id, const int ticketIndex){
-    if ((tickets.find(client_id) != tickets.end()) && (ticketIndex < tickets.at(client_id).size())) {
-        return tickets.at(client_id)[ticketIndex].compileAttachments();
+const std::string TicketManager::compileAttatchments(const dpp::snowflake& client_id){
+    if (ticketsGenerating.find(client_id) != ticketsGenerating.end()) {
+        return ticketsGenerating.at(client_id).compileAttachments();
     } else {
         return "";
     }
 };
 
 const bool TicketManager::userHasTktGenerating(const dpp::user& user) {
-    if (tickets.find(user.id) == tickets.end()) {
+    if (ticketsGenerating.find(user.id) == ticketsGenerating.end()) {
         return false;
     }
-    for (int i = 0; i < tickets.at(user.id).size(); i++) {
-        if (tickets[user.id][i].isGenerating()) {
-            return true;
-        }
-    }
-    return false;
+    
+    return true;
 };
 
-void TicketManager::addTicket(const dpp::user& client) {
-    std::string emptyString = "";
-    Ticket t(emptyString, emptyString, emptyString, client, true);
-    tickets[client.id].insert(tickets.at(client.id).begin(), t);
-};
-
-bool TicketManager::deleteTicket(const dpp::snowflake& client, const Ticket& target) {
-    if (tickets.find(client) == tickets.end()) {
+bool TicketManager::addTicket(const dpp::user& client) {
+    if (ticketsGenerating.find(client.id) != ticketsGenerating.end()) {
         return false;
-    } else {
-        for (int i = 0; i < tickets.at(client).size(); ++i) {
-            if(tickets.at(client)[i] == target) {
-                tickets.at(client).erase(tickets.at(client).begin() + i);
-                if (tickets.at(client).size() <= 0) {
-                    tickets.erase(client);
-                }
-                return true;
-            }
-        }
     }
-    return false;
+    Ticket t("", "", "", client, true);
+    ticketsGenerating[client.id] = t;
+    return true;
 };
 
 bool TicketManager::cancelTicket(const dpp::user& client) {
@@ -59,17 +41,14 @@ bool TicketManager::cancelTicket(const dpp::user& client) {
         return false;
     }
 
-    tickets.at(client.id).erase(tickets.at(client.id).begin());
-    if (tickets.at(client.id).size() <= 0) {
-        tickets.erase(client.id);
-    }
+    ticketsGenerating.erase(client.id);
     return true;
 };
 
 bool TicketManager::createTicket(const dpp::user& client, dpp::cluster& bot) {
     try {
         //cache ticket
-        const Ticket& t = tickets.at(client.id)[0];
+        const Ticket& t = ticketsGenerating.at(client.id);
         //create channel for thread
         dpp::channel c;
         c.set_guild_id(GUILD_ID);
@@ -87,17 +66,15 @@ bool TicketManager::createTicket(const dpp::user& client, dpp::cluster& bot) {
     }
 };
 
-bool TicketManager::saveResponse(const dpp::message& response, int ticketIndex, bool isGenerating, dpp::cluster& bot) {
+bool TicketManager::saveResponse(const dpp::message& response, dpp::cluster& bot) {
     //cache client and ticket
     dpp::user client = response.author;
-    if (tickets.find(client.id) == tickets.end()) { 
+    if (ticketsGenerating.find(client.id) == ticketsGenerating.end()) { 
         return false; //if ticket doesn't exist
     }
-    if (isGenerating) {
-        Ticket& request = tickets[client.id][ticketIndex];
-        return request.storeResponse(response, bot);
-    };
-    return false;
+   
+    Ticket& request = ticketsGenerating[client.id];
+    return request.storeResponse(response, bot);
 };
 
 bool TicketManager::handleBtnPress(dpp::cluster& bot, const dpp::button_click_t& event) {
@@ -105,24 +82,29 @@ bool TicketManager::handleBtnPress(dpp::cluster& bot, const dpp::button_click_t&
     const bool tktGenerating = userHasTktGenerating(event.command.usr);
     const dpp::snowflake& usrId = event.command.usr.id;
 
-    if (tktGenerating)
+    if (!tktGenerating)
     {
-        if (event.custom_id == "btn_submit") {
-            tickets.at(usrId)[0].setIsGenerating(false);
-            dpp::message confirmationMsg("Thank you for your request! Your response has been saved and sent to our verified creators for review. You will recieve a DM from a creator if they would like to fulfill your commission. After one week of inactivity, your request will automatically be closed. Please reach out to an Ink Overflow admin if you have any questions");
-            bot.direct_message_create(usrId, confirmationMsg);
-            createTicket(event.command.usr, bot);
-        } else if (event.custom_id == "btn_cancel") {
-            cancelTicket(event.command.usr);
-            bot.direct_message_create(usrId, dpp::message("Your ticket has been successfully deleted. Please use /request if you would like to create a new ticket"));
-        } else if (event.custom_id == "btn_change_info") {
-
-        } else
-        {
-            return tickets.at(usrId)[0].handleBtnPress(bot, event);
-        }
+        return false;
     }
 
+    if (event.custom_id == "btn_submit") {
+            if (!createTicket(event.command.usr, bot)) {
+                dpp::message errorMsg("Failed to generate ticket. Please submit a bug report at https://forms.gle/NL8JgbAS13BXEBJD6");
+                bot.direct_message_create(usrId, errorMsg);
+                return false;
+            }
+            cancelTicket(event.command.usr);
+            dpp::message confirmationMsg("Thank you for your request! Your response has been saved and sent to our verified creators for review. You will recieve a DM from a creator if they would like to fulfill your commission. After one week of inactivity, your request will automatically be closed. Please reach out to an Ink Overflow admin if you have any questions");
+            bot.direct_message_create(usrId, confirmationMsg);
+    } else if (event.custom_id == "btn_cancel") {
+            cancelTicket(event.command.usr);
+            bot.direct_message_create(usrId, dpp::message("Your ticket has been successfully deleted. Please use /request if you would like to create a new ticket"));
+            return false;
+    } else if (event.custom_id == "btn_change_info") {
+            return false;
+    } else {
+        return ticketsGenerating.at(usrId).handleBtnPress(bot, event);
+    }
     return false;
 };
 
@@ -178,3 +160,4 @@ bool TicketManager::publishTicket(const dpp::channel& channel, dpp::cluster& bot
 
     return true;
 };
+

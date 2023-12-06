@@ -110,7 +110,7 @@ int main() {
                     bot.direct_message_create(event.msg.author.id, dpp::message("You aren't currently creating a ticket. Use /status if you want to delete a ticket you've already submitted."));
                 }
             } else if (tktManager.userHasTktGenerating(event.msg.author)) {
-                if (tktManager.saveResponse(event.msg, 0, true, bot)){
+                if (tktManager.saveResponse(event.msg, bot)){
                     responder.generateTicketResponse(event.msg, event.msg.author, tktManager);
                 }
             }

@@ -40,18 +40,12 @@ const bool Responder::sendInitResponse(const dpp::user& client) {
 
 const void Responder::generateTicketResponse(const dpp::message& msgToRespond, const dpp::user& client, TicketManager& tktManager) {
     //if ticket has not yet been created, respond with initial prompt and initialize ticket
-    if(tktManager.tickets.find(client.id) == tktManager.tickets.end()) {
+    if(!tktManager.userHasTktGenerating(client)) {
         sendInitResponse(client);
         tktManager.addTicket(client);
         return;
-    } else {
-        if (!tktManager.userHasTktGenerating(client)) { //if user has no ticket in progress, initialize new ticket
-            sendInitResponse(client);
-            tktManager.addTicket(client);
-            return;
-        } 
-    }
-    Ticket& request = tktManager.tickets[client.id].front();
+    } 
+    Ticket& request = tktManager.ticketsGenerating[client.id];
     if (!request.isBudgetInitialized()) { 
         if (request.isBudgetTokens()) { //token response
             bot.direct_message_create(client.id, dpp::message("Ok! Please type out the amount of tokens you would like to pay. Please note that you must type out the full amount. Ex: Instead of 100K, you must write 100,000."));
@@ -74,7 +68,7 @@ const void Responder::generateTicketResponse(const dpp::message& msgToRespond, c
         bot.direct_message_create(client.id, dpp::message("Lastly, name your commission request. This name should reflect the content of your request to help it stand out! Ex: 'Roman Empire Enviroment'"));
     } else if (request.isGenerating()) {
         //generate response
-        dpp::message msg( "Ok! Please confirm all of the following information is correct: \n" + tktManager.compileBody(client.id, 0) + "\n" + tktManager.compileAttatchments(client.id, 0));
+        dpp::message msg( "Ok! Please confirm all of the following information is correct: \n" + tktManager.compileBody(client.id) + "\n" + tktManager.compileAttatchments(client.id));
         //add buttons
         msg.add_component(
             dpp::component().add_component(
