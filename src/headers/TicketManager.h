@@ -11,7 +11,6 @@ class TicketManager {
 
     private:
         bool deleteTicket(const dpp::snowflake& client, const Ticket& target);
-        Ticket* getEditingTicket(const dpp::snowflake& clientId); //gets ticket currently editing for client. Returns empty ptr if map entry is empty.
 
     public:
         std::unordered_map<dpp::snowflake, std::vector<Ticket>> tickets; //key is client id
@@ -22,8 +21,6 @@ class TicketManager {
 
         //tkt operations
         const bool userHasTktGenerating(const dpp::user& user);
-        const bool userHasTktEditing(const dpp::user& user);
-        const bool listTickets(const dpp::user& client, dpp::cluster& bot);
         void addTicket(const dpp::user& client);
         bool cancelTicket(const dpp::user& client); //Deletes ticket CURRENTLY being created
 
@@ -31,7 +28,6 @@ class TicketManager {
         bool createTicket(const dpp::user& client, dpp::cluster& bot);
         bool saveResponse(const dpp::message& response, int ticketIndex, bool isGenerating, dpp::cluster& bot); //save response in ticket depending on gen stage
         bool handleBtnPress(dpp::cluster& bot, const dpp::button_click_t& event); //return true if tktResponse needs to be called
-        const bool reviewTicket(const dpp::user&client, int ticketIndex, dpp::cluster& bot); //opens review/edit menu
         bool publishTicket(const dpp::channel& channel, dpp::cluster& bot); //Moves ticket channel from Private to Public category
 
 };

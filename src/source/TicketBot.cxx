@@ -81,10 +81,6 @@ int main() {
             } else {
                 event.reply(dpp::message("You aren't currently creating a ticket. Use /status if you want to delete a ticket you've already submitted.").set_flags(dpp::m_ephemeral));
             }
-        } else if (event.command.get_command_name() == "status") {
-            if (tktManager.listTickets(event.command.usr, bot)) {
-                event.reply(dpp::message("Check your DM's").set_flags(dpp::m_ephemeral));
-            }
         } else if (event.command.get_command_name() == "open_ticket") {
             tktManager.publishTicket(event.command.channel, bot);
             event.reply(dpp::message("This ticket is now public.").set_flags(dpp::m_ephemeral));
@@ -117,8 +113,6 @@ int main() {
                 if (tktManager.saveResponse(event.msg, 0, true, bot)){
                     responder.generateTicketResponse(event.msg, event.msg.author, tktManager);
                 }
-            } else if (tktManager.userHasTktEditing(event.msg.author)) {
-                tktManager.saveResponse(event.msg, 0, false, bot);
             }
         }
     });
