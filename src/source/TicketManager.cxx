@@ -129,45 +129,50 @@ bool TicketManager::publishTicket(const dpp::channel& channel, dpp::cluster& bot
         c.set_parent_id(PUBLIC_CATEGORY_ID);
         bot.channel_edit(c,[](auto const& callback) {});
     } catch( ... ) {
-        std::cout << "ERROR: Failed to publish ticket\n";
+        std::cout << "ERROR: Failed to publish ticket" << std::endl;
         return false;
     }
 
     //retrieve usr
-    bot.message_get(c.last_message_id, c.id, [&bot, c](const dpp::confirmation_callback_t& callback) {
-        if (callback.is_error()) {
-            std::cout << callback.get_error().message << std::endl;
-            return false;
-        }
-    
-        std::string usrId = "";
-        try {
-            const dpp::message& m = std::get<dpp::message>(callback.value);
-            for (int i = 0; i < m.content.length(); ++i ) {
-                char c = m.content[i];
-                if (c == '@') {
-                    usrId = m.content.substr(i + 1, 18);
+    bot.message_get(c.last_message_id, c.id, [&bot, c, this](const dpp::confirmation_callback_t& callback) {
+        if (!callback.is_error()) {
+            std::string usrId = "";
+            try {
+                const dpp::message& m = std::get<dpp::message>(callback.value);
+                for (int i = 0; i < m.content.length(); ++i ) {
+                    char c = m.content[i];
+                    if (c == '@') {
+                        usrId = m.content.substr(i + 1, 18);
+                    }
                 }
+
+                //retrieve permissions
+                bot.channel_get(PUBLIC_CATEGORY_ID, [&bot, c, usrId, this](dpp::confirmation_callback_t reply){
+                if (!reply.is_error()) {
+                    const dpp::channel& category = std::get<dpp::channel>(reply.value);
+                    const std::vector<dpp::permission_overwrite>& overwrite_perms = category.permission_overwrites;
+                    //sync permission fro verifs and client with category
+                    for (dpp::permission_overwrite perm : overwrite_perms) {
+                        if (perm.id == dpp::snowflake(VERIFS_ID)) {
+                            bot.channel_edit_permissions(c, dpp::snowflake(VERIFS_ID), uint64_t(perm.allow), uint64_t(perm.deny), false);
+                            bot.channel_edit_permissions(c, dpp::snowflake(usrId), uint64_t(perm.allow), uint64_t(perm.deny), true);
+                        }
+                    }
+
+                    dpp::message notif(c.id, "<@" + usrId + "> Your commission has been approved and is now available to all Verified Creators. Please use this channel to coordinate with verifs and elaborate on your request.");
+                    notif.set_allowed_mentions(true, true, true, true, std::vector<dpp::snowflake>(), std::vector<dpp::snowflake>());
+                    bot.message_create(notif);
+                } else {
+                    std::cout << "ERROR: Failed to retrieve public ticket category. Check config file." << std::endl;
+                }
+            });}
+            catch (...) {
+                std::cout << "ERROR: Failed tor retrieve usrId from ticket content" << std::endl;
             }
-        } catch (...) {
-            std::cout << "ERROR: Failed tor retrieve usrId from ticket content\n";
-            return false;
+        } else {
+            std::cout << callback.get_error().message << std::endl;
         }
-
-        try {
-            bot.channel_edit_permissions(c, dpp::snowflake(usrId), uint64_t(dpp::p_view_channel), uint64_t(0), true);
-            dpp::message notif(c.id, "<@" + usrId + "> Your commission has been approved and is now available to all Verified Creators. Please use this channel to coordinate with verifs and elaborate on your request.");
-            notif.set_allowed_mentions(true, true, true, true, std::vector<dpp::snowflake>(), std::vector<dpp::snowflake>());
-            bot.message_create(notif);
-        } catch (...) {
-            std::cout << "ERROR: Failed to add usr to channel";
-            return false;
-        }
-
-        return true;
     });
-
-
     return true;
 };
 
