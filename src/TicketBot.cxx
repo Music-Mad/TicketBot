@@ -130,8 +130,8 @@ int main() {
 
             dpp::slashcommand requestCommand("request", "Create a commission request", bot.me.id);
             dpp::slashcommand openTicket("open_ticket", "Open a commission for all verified creators", bot.me.id);
-            dpp::slashcommand cancelRequest("cancel", "cancel a ticket in-progress", bot.me.id);
-            dpp::slashcommand closeTicket("close_ticket", "Close a ticket thread", bot.me.id);
+            dpp::slashcommand cancelRequest("cancel", "Cancel a ticket in-progress", bot.me.id);
+            dpp::slashcommand closeTicket("close_ticket", "Close a ticket", bot.me.id);
             dpp::slashcommand bugReport("report_bug", "Report a bug with our service!", bot.me.id);
 
             bot.guild_command_create(requestCommand, GUILD_ID);
