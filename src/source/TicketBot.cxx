@@ -96,8 +96,11 @@ int main() {
                 event.reply(dpp::message("You aren't currently creating a ticket. Use /status if you want to delete a ticket you've already submitted.").set_flags(dpp::m_ephemeral));
             }
         } else if (event.command.get_command_name() == "open_ticket") {
-            tktManager.publishTicket(event.command.channel, bot);
-            event.reply(dpp::message("This ticket is now public.").set_flags(dpp::m_ephemeral));
+            if (tktManager.publishTicket(event.command.channel, bot)) {
+                event.reply(dpp::message("This ticket is now public.").set_flags(dpp::m_ephemeral));
+            } else {
+                event.reply(dpp::message("Command failed: Could not open ticket.").set_flags(dpp::m_ephemeral));
+            }
         } else if (event.command.get_command_name() == "close_ticket") {
 
             if (event.command.channel.parent_id != dpp::snowflake(PUBLIC_CATEGORY_ID) && event.command.channel.parent_id != dpp::snowflake(PRIVATE_CATEGORY_ID)) {
