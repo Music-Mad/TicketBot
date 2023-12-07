@@ -166,7 +166,7 @@ bool TicketManager::publishTicket(const dpp::channel& channel, dpp::cluster& bot
                         }
                     }
 
-                    dpp::message notif(c.id, "<@" + usrId + "> Your commission has been approved and is now available to all Verified Creators. Use this channel to coordinate with verifs and elaborate on your request.");
+                    dpp::message notif(c.id, "<@" + usrId + "> Your commission has been approved and is now available to all Verified Creators. Use this channel to coordinate with verifs and elaborate on your request. Once you have entered a contract with a creator. Please use the /close_ticket command in this channel.");
                     notif.set_allowed_mentions(true, true, true, true, std::vector<dpp::snowflake>(), std::vector<dpp::snowflake>());
                     bot.message_create(notif);
                 } else {
