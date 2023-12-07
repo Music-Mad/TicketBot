@@ -1,4 +1,4 @@
-#include "../headers/TicketManager.h"
+#include "TicketManager.h"
 
 TicketManager::TicketManager(const std::string& configFilePath)
 :

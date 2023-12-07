@@ -1,4 +1,4 @@
-#include "../headers/JsonReader.h"
+#include "JsonReader.h"
 
 JsonReader::JsonReader(const std::string& filePath) {
         std::ifstream config(filePath);

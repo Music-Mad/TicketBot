@@ -1,4 +1,4 @@
-#include "../headers/Responder.h"
+#include "Responder.h"
 
 Responder::Responder(dpp::cluster& bot) 
     :

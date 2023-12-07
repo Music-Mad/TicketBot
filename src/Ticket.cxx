@@ -1,4 +1,4 @@
-#include "../headers/Ticket.h"
+#include "Ticket.h"
 
 Ticket::Ticket() {
     budget = "";

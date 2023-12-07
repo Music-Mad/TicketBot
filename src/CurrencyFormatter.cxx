@@ -1,4 +1,4 @@
-#include "../headers/CurrencyFormatter.h"
+#include "CurrencyFormatter.h"
 #include <variant>
 #include <iomanip>
 #include <iostream>

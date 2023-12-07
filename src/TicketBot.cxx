@@ -1,6 +1,6 @@
 #include <variant> //for std::get
-#include "../headers/TicketManager.h"
-#include "../headers/Responder.h"
+#include "TicketManager.h"
+#include "Responder.h"
 
 //constants
 
