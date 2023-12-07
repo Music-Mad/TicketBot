@@ -111,7 +111,7 @@ bool TicketManager::handleBtnPress(dpp::cluster& bot, const dpp::button_click_t&
                 return false;
             }
             cancelTicket(event.command.usr);
-            dpp::message confirmationMsg("Thank you for your request! Your response has been saved and sent to our verified creators for review. You will recieve a DM from a creator if they would like to fulfill your commission. After one week of inactivity, your request will automatically be closed. Please reach out to an Ink Overflow admin if you have any questions");
+            dpp::message confirmationMsg("Thank you for your request! Your response has been saved and is awaiting review. You will recieve a notification in the Ink Overflow server once your request has been approved. Please reach out to <@463065898308075530> if you have any questions");
             bot.direct_message_create(usrId, confirmationMsg);
     } else if (event.custom_id == "btn_cancel") {
             cancelTicket(event.command.usr);
@@ -166,7 +166,7 @@ bool TicketManager::publishTicket(const dpp::channel& channel, dpp::cluster& bot
                         }
                     }
 
-                    dpp::message notif(c.id, "<@" + usrId + "> Your commission has been approved and is now available to all Verified Creators. Please use this channel to coordinate with verifs and elaborate on your request.");
+                    dpp::message notif(c.id, "<@" + usrId + "> Your commission has been approved and is now available to all Verified Creators. Use this channel to coordinate with verifs and elaborate on your request.");
                     notif.set_allowed_mentions(true, true, true, true, std::vector<dpp::snowflake>(), std::vector<dpp::snowflake>());
                     bot.message_create(notif);
                 } else {

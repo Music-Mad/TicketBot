@@ -9,7 +9,7 @@ Responder::Responder(dpp::cluster& bot)
 
 const bool Responder::sendInitResponse(const dpp::user& client) {
      try {
-        dpp::message msg("Welcome to the Ink Overflow community marketplace! If you ever encounter any problems with our service please use this form to report them: https://forms.gle/NL8JgbAS13BXEBJD6. If you would like to cancel your request at any point, type '**/cancel.**' \n Before publishing your commission, we would like to learn a little bit more about your request. Firstly, will you be paying in Rec Room tokens or USD (US Dollar)?"); 
+        dpp::message msg("Welcome to the Ink Overflow community marketplace! If you encounter any problems with our service please use this form to report them: https://forms.gle/NL8JgbAS13BXEBJD6. If you would like to cancel your request at any point, type '**/cancel.**' \n Before publishing your commission, we would like to learn a little bit more about your request. Firstly, will you be paying in Rec Room tokens or USD (US Dollar)?"); 
         msg.add_component(
             dpp::component().add_component(
 	        dpp::component().set_label("USD").
