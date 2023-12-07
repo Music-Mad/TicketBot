@@ -1,11 +1,8 @@
 #include <dpp/dpp.h>
-#include <string>
+#include "../headers/JsonReader.h"
 #include <variant> //for std::get
 #include "../headers/TicketManager.h"
 #include "../headers/Responder.h"
-//for reading config json
-#include <fstream>
-#include "rapidjson/document.h" 
 
 //constants
 
@@ -25,44 +22,18 @@ void defaultCallback(dpp::confirmation_callback_t callback) {
     }
 };
 
-bool readStringFromJSON(rapidjson::Document& doc, const char* key, std::string& variable, const std::string& errorMsg) {
-    if (doc.HasMember(key) && doc[key].IsString()) {
-        variable = doc[key].GetString();
-        return true;
-    } else {
-        std::cerr << errorMsg << std::endl;
-        return false;
-    }
-}
-
 TicketManager tktManager;
 
 int main() {
 
-    std::ifstream config("/root/TicketBot/private_config.json");
-    if (!config.is_open()) {
-        std::cout << "Cannot open config.json" << std::endl;
-        return 0;
-    }
-
-    std::string jsonContent((std::istreambuf_iterator<char>(config)), std::istreambuf_iterator<char>());
-    config.close();
-    // Parse the JSON content
-    rapidjson::Document doc;
-    doc.Parse(jsonContent.c_str());
-    // Check if parsing was successful
-    if (!doc.HasParseError() && doc.IsObject()) {
-        // Read JSON data
-        readStringFromJSON(doc, "api_key", BOT_TOKEN, "Error: Missing or invalid 'api_key' in the config.json file.");
-        readStringFromJSON(doc, "guild_id", GUILD_ID, "Error: Missing or invalid 'guild_id' in the config.json file.");
-        readStringFromJSON(doc, "public_category_id", PUBLIC_CATEGORY_ID, "Error: Missing or invalid 'public_category_id' in the config.json file.");
-        readStringFromJSON(doc, "private_category_id", PRIVATE_CATEGORY_ID, "Error: Missing or invalid 'private_category_id' in the config.json file.");
-        readStringFromJSON(doc, "verified_creator_id", VERIFS_ID, "Error: Missing or invalid 'verified_category_id' in the config.json file.");
-        readStringFromJSON(doc, "admin_id", ADMIN_ID, "Error: Missing or invalid 'admin_id' in the config.json file.");
-    } else {
-        std::cerr << "Error: Invalid JSON format in the configuration file." << std::endl;
-        return 0;
-    }
+    //Read and store json data
+    JsonReader reader("/root/TicketBot/private_config.json");
+    reader.readStringFromJSON("api_key", BOT_TOKEN, "Error: Missing or invalid 'api_key' in the config.json file.");
+    reader.readStringFromJSON("guild_id", GUILD_ID, "Error: Missing or invalid 'guild_id' in the config.json file.");
+    reader.readStringFromJSON("public_category_id", PUBLIC_CATEGORY_ID, "Error: Missing or invalid 'public_category_id' in the config.json file.");
+    reader.readStringFromJSON("private_category_id", PRIVATE_CATEGORY_ID, "Error: Missing or invalid 'private_category_id' in the config.json file.");
+    reader.readStringFromJSON("verified_creator_id", VERIFS_ID, "Error: Missing or invalid 'verified_category_id' in the config.json file.");
+    reader.readStringFromJSON("admin_id", ADMIN_ID, "Error: Missing or invalid 'admin_id' in the config.json file.");
 
     /* Create bot cluster */
     dpp::cluster bot(BOT_TOKEN, dpp::i_message_content | dpp::i_direct_messages | dpp::i_guild_message_reactions);
