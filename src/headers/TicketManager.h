@@ -7,6 +7,7 @@ class TicketManager {
     private:
         const std::string PRIVATE_CATEGORY_ID = "1164614854125027328";
         const std::string PUBLIC_CATEGORY_ID = "1164614806502899845";
+        const std::string VERIFS_ID = "1139260164906700920";
         const std::string GUILD_ID = "976104010924847137";
 
     public:
