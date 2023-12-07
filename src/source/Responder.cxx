@@ -81,15 +81,6 @@ const void Responder::generateTicketResponse(const dpp::message& msgToRespond, c
         );
         msg.add_component(
             dpp::component().add_component(
-	        dpp::component().set_label("Change information").
-	        set_type(dpp::cot_button).
-	        set_emoji(u8"🖊️").
-	        set_style(dpp::cos_primary).
-	        set_id("btn_change_info")
-            )
-        );
-        msg.add_component(
-            dpp::component().add_component(
 	        dpp::component().set_label("Cancel ticket").
 	        set_type(dpp::cot_button).
 	        set_emoji(u8"⛔").
