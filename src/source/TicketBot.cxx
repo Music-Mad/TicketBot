@@ -88,7 +88,9 @@ int main() {
             event.reply(dpp::message("Closing ticket...").set_flags(dpp::m_ephemeral));
             tktManager.closeTicketChannel(event.command.channel, bot);
         } 
-        else {
+        else if (event.command.get_command_name() == "report_bug") {
+            event.reply(dpp::message("Please report bugs with this form: https://forms.gle/NL8JgbAS13BXEBJD6").set_flags(dpp::m_ephemeral));
+        } else {
             std::cout << "Command " << event.command.get_command_name() << " not recognized" << std::endl;
         }
     });
@@ -130,11 +132,13 @@ int main() {
             dpp::slashcommand openTicket("open_ticket", "Open a commission for all verified creators", bot.me.id);
             dpp::slashcommand cancelRequest("cancel", "cancel a ticket in-progress", bot.me.id);
             dpp::slashcommand closeTicket("close_ticket", "Close a ticket thread", bot.me.id);
+            dpp::slashcommand bugReport("report_bug", "Report a bug with our service!", bot.me.id);
 
             bot.guild_command_create(requestCommand, GUILD_ID);
             bot.guild_command_create(openTicket, GUILD_ID);
             bot.guild_command_create(cancelRequest, GUILD_ID);
             bot.guild_command_create(closeTicket, GUILD_ID);
+            bot.guild_command_create(bugReport, GUILD_ID);
         }
     });
     /* Start the bot */
