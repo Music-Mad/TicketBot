@@ -1,19 +1,20 @@
 #pragma once
 #include <dpp/dpp.h>
-#include <string>
+#include "JsonReader.h"
 #include "Ticket.h"
 
 class TicketManager {
     private:
-        const std::string PRIVATE_CATEGORY_ID = "1164614854125027328";
-        const std::string PUBLIC_CATEGORY_ID = "1164614806502899845";
-        const std::string VERIFS_ID = "1139260164906700920";
-        const std::string GUILD_ID = "976104010924847137";
+        JsonReader reader;
+        std::string PRIVATE_CATEGORY_ID;
+        std::string PUBLIC_CATEGORY_ID;
+        std::string VERIFS_ID;
+        std::string GUILD_ID;
 
     public:
         std::unordered_map<dpp::snowflake, Ticket> ticketsGenerating; //Stores tickets being created. Key is client id
     public:
-        TicketManager();
+        TicketManager(const std::string& configFilePath);
         const std::string compileBody(const dpp::snowflake& client_id);
         const std::string compileAttatchments(const dpp::snowflake& client_id);
 

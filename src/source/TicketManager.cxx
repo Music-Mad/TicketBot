@@ -1,7 +1,14 @@
 #include "../headers/TicketManager.h"
 
-TicketManager::TicketManager()
-{};
+TicketManager::TicketManager(const std::string& configFilePath)
+:
+    reader(configFilePath)
+{
+    reader.readStringFromJSON("guild_id", GUILD_ID, "Error: Missing or invalid 'guild_id' in the config.json file.");
+    reader.readStringFromJSON("public_category_id", PUBLIC_CATEGORY_ID, "Error: Missing or invalid 'public_category_id' in the config.json file.");
+    reader.readStringFromJSON("private_category_id", PRIVATE_CATEGORY_ID, "Error: Missing or invalid 'private_category_id' in the config.json file.");
+    reader.readStringFromJSON("verified_creator_id", VERIFS_ID, "Error: Missing or invalid 'verified_category_id' in the config.json file.");
+};
 
 const std::string TicketManager::compileBody(const dpp::snowflake& client_id) {
     if (ticketsGenerating.find(client_id) != ticketsGenerating.end()) {

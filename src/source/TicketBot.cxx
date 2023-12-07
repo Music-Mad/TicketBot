@@ -1,5 +1,3 @@
-#include <dpp/dpp.h>
-#include "../headers/JsonReader.h"
 #include <variant> //for std::get
 #include "../headers/TicketManager.h"
 #include "../headers/Responder.h"
@@ -22,7 +20,7 @@ void defaultCallback(dpp::confirmation_callback_t callback) {
     }
 };
 
-TicketManager tktManager;
+TicketManager tktManager("/root/TicketBot/private_config.json");
 
 int main() {
 
