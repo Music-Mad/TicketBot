@@ -127,7 +127,7 @@ bool TicketManager::handleBtnPress(dpp::cluster& bot, const dpp::button_click_t&
 
 bool TicketManager::publishTicket(const dpp::channel& channel, dpp::cluster& bot) {
     //if ticket is already published return
-    if (channel.parent_id == dpp::snowflake(PUBLIC_CATEGORY_ID)) {
+    if (channel.parent_id != dpp::snowflake(PRIVATE_CATEGORY_ID)) {
         return false;
     }
 
