@@ -20,12 +20,12 @@ void defaultCallback(dpp::confirmation_callback_t callback) {
     }
 };
 
-TicketManager tktManager("/root/TicketBot/config.json");
+TicketManager tktManager("TicketBot/config.json");
 
 int main() {
 
     //Read and store json data
-    JsonReader reader("/root/TicketBot/config.json");
+    JsonReader reader("TicketBot/config.json");
     reader.readStringFromJSON("api_key", BOT_TOKEN, "Error: Missing or invalid 'api_key' in the config.json file.");
     reader.readStringFromJSON("guild_id", GUILD_ID, "Error: Missing or invalid 'guild_id' in the config.json file.");
     reader.readStringFromJSON("public_category_id", PUBLIC_CATEGORY_ID, "Error: Missing or invalid 'public_category_id' in the config.json file.");
