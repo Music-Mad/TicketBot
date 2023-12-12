@@ -26,12 +26,15 @@ int main() {
 
     //Read and store json data
     JsonReader reader("TicketBot/config.json");
-    reader.readStringFromJSON("api_key", BOT_TOKEN, "Error: Missing or invalid 'api_key' in the config.json file.");
-    reader.readStringFromJSON("guild_id", GUILD_ID, "Error: Missing or invalid 'guild_id' in the config.json file.");
-    reader.readStringFromJSON("public_category_id", PUBLIC_CATEGORY_ID, "Error: Missing or invalid 'public_category_id' in the config.json file.");
-    reader.readStringFromJSON("private_category_id", PRIVATE_CATEGORY_ID, "Error: Missing or invalid 'private_category_id' in the config.json file.");
-    reader.readStringFromJSON("verified_creator_id", VERIFS_ID, "Error: Missing or invalid 'verified_category_id' in the config.json file.");
-    reader.readStringFromJSON("admin_id", ADMIN_ID, "Error: Missing or invalid 'admin_id' in the config.json file.");
+    if (
+    !reader.readStringFromJSON("api_key", BOT_TOKEN, "Error: Missing or invalid 'api_key' in the config.json file.") ||
+    !reader.readStringFromJSON("guild_id", GUILD_ID, "Error: Missing or invalid 'guild_id' in the config.json file.") ||
+    !reader.readStringFromJSON("public_category_id", PUBLIC_CATEGORY_ID, "Error: Missing or invalid 'public_category_id' in the config.json file.") ||
+    !reader.readStringFromJSON("private_category_id", PRIVATE_CATEGORY_ID, "Error: Missing or invalid 'private_category_id' in the config.json file.") ||
+    !reader.readStringFromJSON("verified_creator_id", VERIFS_ID, "Error: Missing or invalid 'verified_category_id' in the config.json file.") ||
+    !reader.readStringFromJSON("admin_id", ADMIN_ID, "Error: Missing or invalid 'admin_id' in the config.json file.")) {
+        std::cout << "ERROR: config.json formatted incorrectly." << std::endl;
+    }
 
     /* Create bot cluster */
     dpp::cluster bot(BOT_TOKEN, dpp::i_message_content | dpp::i_direct_messages | dpp::i_guild_message_reactions);
